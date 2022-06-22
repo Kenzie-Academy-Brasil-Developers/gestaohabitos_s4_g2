@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-     color: var(--cor-secundaria-light);
+     color: var(--color-second-light);
      background-color: var(--bg-button);
      width: 152px;
      height: 40px;
