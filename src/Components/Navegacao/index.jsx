@@ -1,6 +1,8 @@
-const Navegacao = () => {
+import { NavegacaoCustumizada } from "./indexStyle";
+
+const Navegacao = ({ aberto }) => {
   return (
-    <nav>
+    <NavegacaoCustumizada aberto={aberto}>
       <ul>
         <li>Home</li>
         <li>Quem Somos</li>
@@ -8,7 +10,7 @@ const Navegacao = () => {
         <li>Login</li>
         <li>Cadastro</li>
       </ul>
-    </nav>
+    </NavegacaoCustumizada>
   );
 };
 

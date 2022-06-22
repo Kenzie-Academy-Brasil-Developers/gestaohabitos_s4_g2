@@ -4,20 +4,36 @@ import { FaBars } from "react-icons/fa";
 import { FiX } from "react-icons/fi";
 
 import Navegacao from "../Navegacao";
+import { HeaderCustomizada } from "./indexStyle";
+import { useState } from "react";
 
 const Header = () => {
+  const [aberto, setAberto] = useState(false);
+
+  const controleNavegacao = () => {
+    setAberto(!aberto);
+  };
+
   return (
-    <header>
+    <HeaderCustomizada>
       <figure>
         <img src={Logo} alt="logo gestão de habitos" />
       </figure>
 
       <div>
-        <FaBars size="30" />
+        {aberto ? (
+          <FiX
+            size="30"
+            onClick={controleNavegacao}
+            color="var(--cor-primaria-light)"
+          />
+        ) : (
+          <FaBars size="30" onClick={controleNavegacao} />
+        )}
       </div>
 
-      <Navegacao />
-    </header>
+      <Navegacao aberto={aberto} />
+    </HeaderCustomizada>
   );
 };
 
