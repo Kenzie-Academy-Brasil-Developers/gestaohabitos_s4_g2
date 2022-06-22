@@ -19,8 +19,8 @@ export const InputContainer = styled.div`
   width: 100%;
   display: flex;
   padding: 1rem;
-  border-bottom: 1px solid var(--cor-texto-light);
-  background-color: var(--cor-primaria-light);
+  border-bottom: 1px solid var(--color-text-light);
+  background-color: var(--color-primary-light);
 
   input {
     background-color: transparent;
@@ -28,7 +28,7 @@ export const InputContainer = styled.div`
     flex: 1;
     font-size: 0.8rem;
     align-items: center;
-    color: var(--cor-texto-light);
+    color: var(--color-text-light);
     &::placeholder {
       color: rgba(32, 32, 32, 0.8);
     }
