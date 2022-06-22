@@ -1,4 +1,4 @@
-import { Container, InputContainer } from "./styles";
+import { Container, InputContainer } from "./indexStyle";
 
 const Input = ({ label, icon: Icon, register, name, error, ...rest }) => {
   return (

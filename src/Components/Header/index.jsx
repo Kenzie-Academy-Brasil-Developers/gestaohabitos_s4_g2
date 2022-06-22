@@ -3,37 +3,37 @@ import Logo from "../../svg/logo.svg";
 import { FaBars } from "react-icons/fa";
 import { FiX } from "react-icons/fi";
 
-import Navegacao from "../Navegacao";
-import { HeaderCustomizada } from "./indexStyle";
+import Navegation from "../Navegacao";
+import { HeaderCustomizer } from "./indexStyle";
 import { useState } from "react";
 
 const Header = () => {
-  const [aberto, setAberto] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const controleNavegacao = () => {
-    setAberto(!aberto);
+  const controlNavegation = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
-    <HeaderCustomizada>
+    <HeaderCustomizer>
       <figure>
         <img src={Logo} alt="logo gestão de habitos" />
       </figure>
 
       <div>
-        {aberto ? (
+        {isOpen ? (
           <FiX
             size="30"
-            onClick={controleNavegacao}
-            color="var(--cor-primaria-light)"
+            onClick={controlNavegation}
+            color="var(--color-primary-light)"
           />
         ) : (
-          <FaBars size="30" onClick={controleNavegacao} />
+          <FaBars size="30" onClick={controlNavegation} />
         )}
       </div>
 
-      <Navegacao aberto={aberto} />
-    </HeaderCustomizada>
+      <Navegation isOpen={isOpen} />
+    </HeaderCustomizer>
   );
 };
 

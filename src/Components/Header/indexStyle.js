@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderCustomizada = styled.header`
+export const HeaderCustomizer = styled.header`
     height: 70px;
     display: flex;
     justify-content: space-between;

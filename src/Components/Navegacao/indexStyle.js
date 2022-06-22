@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const NavegacaoCustumizada = styled.nav`
-    display: ${(props) => props.aberto ? "flex" : "none"};
-    transform: ${(props) => props.aberto ? "translateX(0%)" : "translateX(100%)"};
-    background-color: var(--bg-cor-menu-mobile-light);
-    opacity: ${(props) => props.aberto ? 1 : 0};
+export const NavegationCustumizer = styled.nav`
+    display: ${(props) => props.open ? "flex" : "none"};
+    transform: ${(props) => props.open ? "translateX(0%)" : "translateX(100%)"};
+    background-color: var(--bg-color-menu-mobile-light);
+    opacity: ${(props) => props.open ? 1 : 0};
     transition: opacity 0.6s;
     position: absolute;
     height: 100vh;
@@ -19,7 +19,7 @@ export const NavegacaoCustumizada = styled.nav`
         justify-content: space-between;
         height: 25%;
         li{
-            color: var(--cor-primaria-light);
+            color: var(--color-primary-light);
         }
     }
 `
