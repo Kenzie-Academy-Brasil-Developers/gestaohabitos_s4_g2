@@ -18,12 +18,14 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         border: 0;
         outline: none;
-
+        
         font-family:'Roboto', sans-serif;;
     }
+    
     article, aside, details, figcaption, figure, 
     footer, header, hgroup, menu, nav, section,main {
         display: block;
+        
     }
     ol, ul {
         list-style: none;
@@ -51,6 +53,6 @@ const GlobalStyle = createGlobalStyle`
         --cor-button-sair-grupo: #71CB75;
     }
 
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
