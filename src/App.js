@@ -6,7 +6,6 @@ function App() {
   return (
     <div>
       <Header />
-      <HomeInfor />
       <Routes />
     </div>
   );
