@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const HeaderCustomizer = styled.header`
-  height: 25px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 12px 0 12px;
+  padding: 22px 12px;
 
   figure {
     height: 100px;
