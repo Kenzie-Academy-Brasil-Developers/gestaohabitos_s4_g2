@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import imagemLogin from "../../svg/image_login.svg";
+import imageLogin from "../../svg/image_login.svg";
 
 export const ContainerLogin = styled.div`
   @media (max-width: 320px) {
@@ -22,7 +22,7 @@ export const DivTitleMobile = styled.div`
 
 export const ContainerForm = styled.div`
   @media (max-width: 321px) {
-    background-color: var(--cor-primaria-light);
+    background-color: var(--color-primary-light);
     height: 300px;
     max-width: 250px;
     display: flex;
@@ -49,7 +49,7 @@ export const ContainerForm = styled.div`
       margin-top: 5px;
     }
   }
-  background-color: var(--cor-primaria-light);
+  background-color: var(--color-primary-light);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,7 +61,7 @@ export const ContainerForm = styled.div`
 export const DivImage = styled.div`
   @media (min-width: 1100px) {
     flex: 1;
-    background: url(${imagemLogin}) no-repeat center;
+    background: url(${imageLogin}) no-repeat center;
     background-size: contain;
   }
 `;
