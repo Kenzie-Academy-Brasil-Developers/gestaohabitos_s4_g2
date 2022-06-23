@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DivContainer = styled.div`
   @media (max-width: 320px) {
-    background-color: var(--cor-primaria-light);
+    background-color: var(--color-primary-light);
     min-height: 151px;
     max-height: 151px;
     width: 300px;
@@ -11,7 +11,7 @@ export const DivContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--cor-primaria-light);
+  background-color: var(--color-primary-light);
   max-height: 215px;
   min-height: 215px;
   width: 260px;
@@ -23,7 +23,7 @@ export const DivInfo = styled.div`
   display: flex;
 `;
 
-export const DivNivel = styled.div`
+export const DivLevel = styled.div`
   display: flex;
   margin-top: 0px;
   max-width: 300px;
@@ -33,11 +33,11 @@ export const DivNivel = styled.div`
     width: 30px;
     height: 30px;
     background-color: ${(props) =>
-      props.etiqueta == "Dificil"
-        ? "var(--cor-etiqueta-nivel-dificil)"
-        : props.etiqueta == "Medio"
-        ? "var(--cor-etiqueta-nivel-medio)"
-        : "var( --cor-etiqueta-nivel-facil)"};
+      props.tag === "Dificil"
+        ? "var(--color-tag-level-easy)"
+        : props.tag === "Medio"
+        ? "var(--color-tag-level-medium)"
+        : "var(--color-tag-level-easy)"};
     border-radius: 5px;
     box-shadow: 3px 3px 3px;
   }
@@ -49,7 +49,7 @@ export const DivNivel = styled.div`
   }
 `;
 
-export const DivCategoria = styled.div`
+export const DivCategory = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,7 +63,7 @@ export const DivCategoria = styled.div`
     flex-wrap: wrap;
   }
 `;
-export const TitleCategoria = styled.div`
+export const TitleCategory = styled.div`
   //max-width: 100px;
   display: flex;
   flex-wrap: wrap;
@@ -76,13 +76,13 @@ export const TitleCategoria = styled.div`
 
 export const DivButton = styled.div`
   display: flex;
-  background-color: var(--bg-cor-menu-mobile-light);
+  background-color: var(--bg-color-menu-mobile-light);
   color: white;
   //padding: 5px;
   border-radius: 10px;
   align-items: center;
   button {
-    background-color: var(--bg-cor-menu-mobile-light);
+    background-color: var(--bg-color-menu-mobile-light);
     color: white;
     font-size: 10px;
     padding: 7px;
@@ -94,20 +94,20 @@ export const DivButton = styled.div`
   }
 `;
 
-export const DivConcluido = styled.div`
+export const DivDone = styled.div`
   width: 100px;
   height: 30px;
   background-color: ${(props) =>
-    props.concluido === "true"
-      ? "var( --cor-button-sair-grupo)"
-      : "var(--cor-button-entrar-grupo)"};
+    props.done === "true"
+      ? "var(--color-button-enter-group)"
+      : "var(--color-button-enter-group)"};
   border-radius: 5px;
   box-shadow: 1px 3px 5px black;
   color: white;
   margin: 0 25px;
 `;
 
-export const DivFrequencia = styled.div`
+export const DivFrequency = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

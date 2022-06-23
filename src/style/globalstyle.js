@@ -37,20 +37,20 @@ const GlobalStyle = createGlobalStyle`
 
 
     :root{
-        --cor-primaria-light: #F9F9F9;
-        --cor-secundaria-light: #F2F2F2;
-        --cor-span-light: #494444; 
-        --cor-texto-light: #202020;
-        --titulo-cor-light: #23242B;
-        --bg-cor-menu-mobile-light: #23242B;
+        --color-primary-light: #F9F9F9;
+        --color-second-light: #F2F2F2;
+        --color-span-light: #494444; 
+        --color-text-light: #202020;
+        --color-title-light: #23242B;
+        --bg-color-menu-mobile-light: #23242B;
 
         --bg-button: #5A5BD5;
-        --cor-etiqueta-nivel-facil: #71CB75;
-        --cor-etiqueta-nivel-medio: #FACB32;
-        --cor-etiqueta-nivel-dificil: #E54B73;
+        --color-tag-level-easy: #71CB75;
+        --color-tag-level-medium: #FACB32;
+        --color-tag-level-hard: #E54B73;
 
-        --cor-button-entrar-grupo: #E54B73;
-        --cor-button-sair-grupo: #71CB75;
+        --color-button-enter-group: #E54B73;
+        --color-button-exit-group: #71CB75;
     }
 
 `;

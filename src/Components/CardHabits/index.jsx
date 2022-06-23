@@ -1,30 +1,30 @@
 import {
-  DivConcluido,
+  DivDone,
   DivButton,
-  DivCategoria,
+  DivCategory,
   DivContainer,
-  DivFrequencia,
+  DivFrequency,
   DivInfo,
-  DivNivel,
-  TitleCategoria,
+  DivLevel,
+  TitleCategory,
 } from "./indexStyle";
 
-const CardHabitos = ({ habitos }) => {
-  const Teste = () => {
+const CardHabits = ({ habits }) => {
+  const Test = () => {
     console.log("cliquei Aqui");
   };
   return (
     <DivContainer>
       <DivInfo>
-        <DivNivel etiqueta="Dificil">
+        <DivLevel tag="Dificil">
           <div></div>
           <h3>Dificil</h3>
-        </DivNivel>
-        <DivCategoria>
+        </DivLevel>
+        <DivCategory>
           <DivButton>
             <button
               onClick={() => {
-                Teste();
+                Test();
               }}
             >
               Editar
@@ -32,25 +32,25 @@ const CardHabitos = ({ habitos }) => {
             |
             <button
               onClick={() => {
-                Teste();
+                Test();
               }}
             >
               Deletar
             </button>
           </DivButton>
-          <TitleCategoria>
+          <TitleCategory>
             <h3>Saude</h3>
-          </TitleCategoria>
-        </DivCategoria>
+          </TitleCategory>
+        </DivCategory>
       </DivInfo>
       <h4>Correr na Esteira</h4>
-      <DivFrequencia>
-        <DivConcluido concluido="true">Concluido</DivConcluido>
+      <DivFrequency>
+        <DivDone done="true">Concluido</DivDone>
 
         <span>Diaria</span>
-      </DivFrequencia>
+      </DivFrequency>
     </DivContainer>
   );
 };
 
-export default CardHabitos;
+export default CardHabits;

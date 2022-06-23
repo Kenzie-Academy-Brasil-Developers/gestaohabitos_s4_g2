@@ -1,8 +1,8 @@
-import { NavegacaoCustumizada } from "./indexStyle";
+import { NavegationCustumizer } from "./indexStyle";
 
-const Navegacao = ({ aberto }) => {
+const Navegation = ({ isOpen }) => {
   return (
-    <NavegacaoCustumizada aberto={aberto}>
+    <NavegationCustumizer open={isOpen}>
       <ul>
         <li>Home</li>
         <li>Quem Somos</li>
@@ -10,8 +10,8 @@ const Navegacao = ({ aberto }) => {
         <li>Login</li>
         <li>Cadastro</li>
       </ul>
-    </NavegacaoCustumizada>
+    </NavegationCustumizer>
   );
 };
 
-export default Navegacao;
+export default Navegation;
