@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import imageLogin from "../../svg/image_login.svg";
-
 export const ContainerLogin = styled.div`
   @media (max-width: 320px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    margin-top: 30px;
   }
 
   height: 80vh;
@@ -23,16 +23,16 @@ export const DivTitleMobile = styled.div`
 export const ContainerForm = styled.div`
   @media (max-width: 321px) {
     background-color: var(--color-primary-light);
-    height: 300px;
-    max-width: 250px;
+    height: 350px;
+    max-width: 270px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    border-radius: 5px;
+    border-radius: 8px;
 
     h1 {
       margin-left: -200px;
-      margin-top: -50px;
+      margin-top: 0px;
       font-size: 1rem;
     }
 
@@ -41,9 +41,7 @@ export const ContainerForm = styled.div`
       flex-direction: column;
       align-items: center;
     }
-    input {
-      margin-bottom: 20px;
-    }
+
     button {
       margin-bottom: 25px;
       margin-top: 5px;
@@ -56,6 +54,11 @@ export const ContainerForm = styled.div`
   justify-content: center;
   width: 100vh;
   max-width: 700px;
+
+  span {
+    color: #0064c0;
+    text-decoration: none;
+  }
 `;
 
 export const DivImage = styled.div`
@@ -64,4 +67,8 @@ export const DivImage = styled.div`
     background: url(${imageLogin}) no-repeat center;
     background-size: contain;
   }
+`;
+
+export const DivInput = styled.div`
+  width: 250px;
 `;
