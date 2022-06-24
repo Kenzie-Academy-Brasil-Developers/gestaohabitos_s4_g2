@@ -5,8 +5,8 @@ import DashGroups from "../Pages/DashGrupos";
 import Group from "../Pages/Grupos";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
+import Blog from "../Pages/Blog"
 import RegisterUser from "../Pages/RegisterUser";
-import Blog from "../Pages/Blog";
 import Profile from "../Pages/Perfil";
 
 const Routes = () => {
@@ -15,25 +15,25 @@ const Routes = () => {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/login">
+      <Route path="/login">
         <Login />
       </Route>
-      <Route exact path="/register">
+      <Route path="/register">
         <RegisterUser />
       </Route>
-      <Route exact path="/blog">
-        <Blog />
+      <Route path="/blog">
+        <Blog/>
       </Route>
       <Route exact path="/dashboard">
         <Dashboard />
       </Route>
-      <Route exact path="/explorerGroups">
+      <Route path="/explorerGroups">
         <DashGroups />
-      </Route>
-      <Route exact path="/dashboard/group/:nameGroup">
+      </Route> 
+      <Route path="/dashboard/group/:nameGroup">
         <Group />
-      </Route>
-      <Route exact path="/updateUser">
+      </Route> 
+      <Route path="/updateUser">
         <Profile />
       </Route>
     </Switch>
