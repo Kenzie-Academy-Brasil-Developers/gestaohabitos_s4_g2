@@ -1,10 +1,5 @@
 const Blog = () => {
-  return (
-    <div>
-      Blog
-      <input type="text" placeholder="funciona por favor" />
-    </div>
-  );
+  return <div>Blog</div>;
 };
 
 export default Blog;
