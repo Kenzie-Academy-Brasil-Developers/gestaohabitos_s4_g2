@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 800px;
-  margin: 0 auto;
+  // width: 800px;
+  width: 100%;
+
+  margin: 20px auto;
   span {
     text-align: left;
     font-size: 0.7rem;
@@ -16,9 +18,8 @@ export const Container = styled.div`
   }
 `;
 export const InputContainer = styled.div`
-  width: 100%;
   display: flex;
-  padding: 1rem;
+  padding: 0.5rem;
   border-bottom: 1px solid var(--color-text-light);
   background-color: var(--color-primary-light);
 
@@ -28,6 +29,7 @@ export const InputContainer = styled.div`
     flex: 1;
     font-size: 0.8rem;
     align-items: center;
+    margin-bottom: 10px;
     color: var(--color-text-light);
     &::placeholder {
       color: rgba(32, 32, 32, 0.8);
