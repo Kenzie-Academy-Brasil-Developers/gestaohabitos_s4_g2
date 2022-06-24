@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
         --color-primary-light: #F9F9F9;
         --color-second-light: #F2F2F2;
         --color-span-light: #494444; 
+        --color-tag-link : #0064C0;
         --color-text-light: #202020;
         --color-title-light: #23242B;
         --bg-color-menu-mobile-light: #23242B;
