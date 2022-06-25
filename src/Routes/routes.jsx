@@ -7,6 +7,10 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Blog from "../Pages/Blog"
 import RegisterUser from "../Pages/RegisterUser";
+import Blog  from "../Pages/Blog";
+import CardAboutUs from "../Components/CardAboutUs";
+// import Login from "../Pages/Login";
+// import Profile from "../Pages/Perfil";
 import Profile from "../Pages/Perfil";
 
 const Routes = () => {
@@ -14,6 +18,7 @@ const Routes = () => {
     <Switch>
       <Route exact path="/">
         <Home />
+        <CardAboutUs />
       </Route>
       <Route path="/login">
         <Login />
