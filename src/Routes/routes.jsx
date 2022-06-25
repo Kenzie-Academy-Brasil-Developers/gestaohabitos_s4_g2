@@ -1,15 +1,39 @@
 import { Route, Switch } from "react-router-dom";
-import Login from "../Pages/Login/index.jsx";
+import Dashboard from "../Pages/Dashboard";
+import DashGroups from "../Pages/DashGrupos";
+import Group from "../Pages/Grupos";
 import Home from "../Pages/Home";
 import RegisterUser from "../Pages/RegisterUser/index.jsx";
+import Login from "../Pages/Login";
+import Blog from "../Pages/Blog";
+import Profile from "../Pages/Perfil";
+
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path={"/login"}>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/login">
         <Login />
       </Route>
-      <Route exact path={"/"}>
-        <Home />
+      <Route path="/register">
+        <RegisterUser />
+      </Route>
+      <Route path="/blog">
+        <Blog />
+      </Route>
+      <Route exact path="/dashboard">
+        <Dashboard />
+      </Route>
+      <Route path="/explorerGroups">
+        <DashGroups />
+      </Route>
+      <Route path="/dashboard/group/:nameGroup">
+        <Group />
+      </Route>
+      <Route path="/updateUser">
+        <Profile />
       </Route>
       <Route exact path={"/cadastro"}>
         <RegisterUser />
