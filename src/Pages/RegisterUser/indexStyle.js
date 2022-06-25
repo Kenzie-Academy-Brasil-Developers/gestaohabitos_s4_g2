@@ -57,7 +57,7 @@ export const ContainerForm = styled.div`
     width: 489px;
   }
   @media (min-width: 1100px) {
-    width: 600px;
+    width: 500px;
     background-color: unset;
     box-shadow: none;
     border-radius: 0;
@@ -97,22 +97,25 @@ export const IconFormHeader = styled.span`
   border-radius: 100%;
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
   border-bottom: 1px solid var(--color-title-light);
   margin-bottom: 8px;
 
-  input {
-    display: block;
-    width: 75%;
-    margin: 0 auto;
-    padding: 0.4rem 0.8rem;
-  }
   input + input {
     margin-top: 15px;
+  }
+  input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
   }
   button {
     display: block;
     margin: 50px auto;
+  }
+  @media (min-width: 600px) {
+    button {
+      width: 78%;
+    }
   }
   @media (min-width: 1100px) {
     border-bottom: none;
@@ -120,7 +123,7 @@ export const Form = styled.div`
       margin-top: 35px;
     }
     button {
-      width: 80%;
+      width: 88%;
     }
   }
 `;
@@ -128,7 +131,9 @@ export const Form = styled.div`
 export const InfoHasAccount = styled.p`
   text-align: center;
   font-size: 0.8rem;
-  span {
+  a {
+    cursor: pointer;
+    text-decoration: none;
     color: var(--color-tag-link);
   }
   @media (min-width: 600px) {
@@ -144,12 +149,12 @@ export const ContentImage = styled.figure`
     display: none;
   }
   @media (min-width: 1300px) {
-    background-color: #fff;
     flex: 1;
+    background-color: #fff;
     img {
       display: block;
       width: 65%;
-      margin: 25px auto 0;
+      margin: 40px auto;
     }
   }
 `;
