@@ -1,5 +1,13 @@
+import Button from "../../Components/Button"
+
+import ModalCustomizer from "../../Components/Modal";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+     home
+    </div>
+  );
 };
 
 export default Home;

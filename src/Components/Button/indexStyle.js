@@ -8,6 +8,5 @@ export const Container = styled.button`
      font-size: 1rem;
      border-radius: 15px;
      box-shadow: 2px 2px 4px 0px #000000;
-
-
 `;
+

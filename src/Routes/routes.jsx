@@ -14,17 +14,25 @@ const Routes = () => {
       <Route exact path="/">
         <Home />
       </Route>
+
       <Route path="/login">
         <Login />
       </Route>
+
+      <Route exact path="/register">
+        <RegisterUser />
+      </Route>
+
       <Route path="/register">
         <RegisterUser />
       </Route>
+
       <Route path="/blog">
         <Blog />
       </Route>
+
       <Route exact path="/dashboard">
-        <Dashboard />
+        <Dashboard />n
       </Route>
       <Route path="/explorerGroups">
         <DashGroups />
@@ -32,6 +40,7 @@ const Routes = () => {
       <Route path="/dashboard/group/:nameGroup">
         <Group />
       </Route>
+
       <Route path="/updateUser">
         <Profile />
       </Route>
