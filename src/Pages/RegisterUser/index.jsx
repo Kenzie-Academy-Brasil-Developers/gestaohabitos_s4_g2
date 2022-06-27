@@ -17,13 +17,20 @@ import {
   FormHeader,
   IconFormHeader,
 } from "./indexStyle";
+import { useRegister } from "../../Providers/Register";
 
 const RegisterUser = () => {
   const formShema = yup.object().shape({
-    name: yup.string().required("Campo obrigatório"),
+    username: yup.string().required("Campo obrigatório"),
     email: yup.string().email("Email inválido").required("Campo obrigatório"),
-    password: yup.string().required("Campo obrigatório"),
+    password: yup
+      .string()
+      .required("Campo obrigatório")
+      .min(6, "Sua senha deve ter no mínimo 6 dígitos"),
   });
+
+  const { functionRegister } = useRegister();
+
   const {
     register,
     handleSubmit,
@@ -34,7 +41,7 @@ const RegisterUser = () => {
   });
 
   const functionHandleSubmit = (data) => {
-    console.log(data);
+    functionRegister(data);
     reset();
   };
   return (
@@ -50,12 +57,12 @@ const RegisterUser = () => {
               </IconFormHeader>
             </FormHeader>
             <Input
-              name="name"
+              name="username"
               type="text"
               placeholder="Nome do usuário"
               icon={AiOutlineUser}
               register={register}
-              error={errors.name?.message}
+              error={errors.username?.message}
             />
             <Input
               name="email"
