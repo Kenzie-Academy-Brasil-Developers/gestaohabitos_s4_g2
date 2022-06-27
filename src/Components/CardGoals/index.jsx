@@ -6,13 +6,13 @@ import {
   Title,
 } from "./indexStyle";
 
-const CardGoals = () => {
+const CardGoals = ({ goals }) => {
   return (
     <Container>
-      <Title>Estudar 10 hrs por dia</Title>
-      <Difficulty>Easy</Difficulty>
-      <PercentageAlreadyMade>10%</PercentageAlreadyMade>
-      <GoalIsCompleted>Não Concluido</GoalIsCompleted>
+      <Title>{goals.title}</Title>
+      <Difficulty>{goals.difficulty}</Difficulty>
+      <PercentageAlreadyMade>{goals.how_much_achieved}</PercentageAlreadyMade>
+      <GoalIsCompleted>{goals.achieved}</GoalIsCompleted>
     </Container>
   );
 };
