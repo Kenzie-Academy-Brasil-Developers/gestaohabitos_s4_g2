@@ -1,5 +1,6 @@
 import { Route, Switch } from "react-router-dom";
 
+
 import Dashboard from "../Pages/Dash";
 import DashGroups from "../Pages/DashGroups";
 import Group from "../Pages/Groups";
@@ -15,9 +16,11 @@ const Routes = () => {
       <Route exact path="/">
         <Home />
       </Route>
+
       <Route path="/login">
         <Login />
       </Route>
+
       <Route path="/register">
         <RegisterUser />
       </Route>
@@ -27,6 +30,7 @@ const Routes = () => {
       <Route path="/blog">
         <Blog />
       </Route>
+
       <Route exact path="/dashboard">
         <Dashboard />
       </Route>
@@ -36,6 +40,7 @@ const Routes = () => {
       <Route path="/explorerGroups">
         <Group />
       </Route>
+
     </Switch>
   );
 };
