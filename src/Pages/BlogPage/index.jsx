@@ -1,4 +1,5 @@
 import CardBlog from "../../Components/CardBlog";
+import MoreInfor from "../../Components/MoreInfor";
 
 import Image1Blog from "../../svg/image1Blog.svg";
 
@@ -45,6 +46,8 @@ const Blog = () => {
           </p>
         </article>
       </Article>
+
+      <MoreInfor/>
     </Container>
   );
 };
