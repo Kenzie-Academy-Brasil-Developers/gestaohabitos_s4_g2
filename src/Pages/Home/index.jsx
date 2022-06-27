@@ -1,11 +1,10 @@
-import Button from "../../Components/Button"
+import CardBlog from "../../Components/CardBlog";
 
-import ModalCustomizer from "../../Components/Modal";
+
 
 const Home = () => {
   return (
     <div>
-     home
     </div>
   );
 };
