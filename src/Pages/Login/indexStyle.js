@@ -7,9 +7,16 @@ export const ContainerLogin = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin-top: 30px;
+    min-width: 320px;
+  }
+
+  @media (min-width: 321px) and (max-width: 1099px) {
+    justify-content: center;
+    align-items: center;
   }
 
   height: 80vh;
+
   display: flex;
   align-items: stretch;
 `;
@@ -47,6 +54,21 @@ export const ContainerForm = styled.div`
       margin-top: 5px;
     }
   }
+
+  @media (min-width: 321px) and (max-width: 1099px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 380px;
+    border-radius: 5px;
+    button {
+      margin-left: 50px;
+      margin-bottom: 25px;
+    }
+  }
+
   background-color: var(--color-primary-light);
   display: flex;
   flex-direction: column;
@@ -55,6 +77,10 @@ export const ContainerForm = styled.div`
   width: 100vh;
   max-width: 700px;
 
+  button {
+    margin-left: 30px;
+    margin-bottom: 25px;
+  }
   span {
     color: #0064c0;
     text-decoration: none;
@@ -71,4 +97,9 @@ export const DivImage = styled.div`
 
 export const DivInput = styled.div`
   width: 250px;
+  @media (min-width: 321px) and (max-width: 1099px) {
+    width: 100%;
+    justify-content: center;
+    padding: 5px;
+  }
 `;

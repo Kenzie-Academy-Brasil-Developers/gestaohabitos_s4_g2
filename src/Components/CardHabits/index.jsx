@@ -16,9 +16,9 @@ const CardHabits = ({ habits }) => {
   return (
     <DivContainer>
       <DivInfo>
-        <DivLevel tag="Dificil">
+        <DivLevel tag={habits.difficulty}>
           <div></div>
-          <h3>Dificil</h3>
+          <h3>{habits.difficulty}</h3>
         </DivLevel>
         <DivCategory>
           <DivButton>
@@ -39,15 +39,15 @@ const CardHabits = ({ habits }) => {
             </button>
           </DivButton>
           <TitleCategory>
-            <h3>Saude</h3>
+            <h3>{habits.category}</h3>
           </TitleCategory>
         </DivCategory>
       </DivInfo>
-      <h4>Correr na Esteira</h4>
+      <h4>{habits.title}</h4>
       <DivFrequency>
         <DivDone done="true">Concluido</DivDone>
 
-        <span>Diaria</span>
+        <span>{habits.frequency}</span>
       </DivFrequency>
     </DivContainer>
   );
