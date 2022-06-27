@@ -1,18 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/";
+import App from "./App";
 
-import { BrowserRouter } from 'react-router-dom';
-import GlobalStyle from './style/globalstyle'
-
+import { BrowserRouter } from "react-router-dom";
+import GlobalStyle from "./style/globalstyle";
+import { RegisterProvider } from "./Providers/Register";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <GlobalStyle/>
-      <App />
-    </BrowserRouter>
+    <RegisterProvider>
+      <BrowserRouter>
+        <GlobalStyle />
+        <App />
+      </BrowserRouter>
+    </RegisterProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
