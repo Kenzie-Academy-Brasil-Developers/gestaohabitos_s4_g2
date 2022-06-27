@@ -35,7 +35,6 @@ const RegisterUser = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm({
     resolver: yupResolver(formShema),
   });
