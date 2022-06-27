@@ -8,14 +8,16 @@ export const RegisterContext = createContext();
 export const RegisterProvider = ({ children }) => {
   const history = useHistory();
   const functionRegister = (data) => {
+    console.log(data);
     api
       .post("/users/", data)
       .then((_) => {
         toast.success("Sucesso ao cria a conta");
         history.push("/login");
       })
-      .catch((_) => {
-        toast.error("Erro ao cria sua conta. Tente outro email");
+      .catch((err) => {
+        // toast.error("Erro ao cria sua conta. Tente outro email");
+        console.log(err);
       });
   };
 

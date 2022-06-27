@@ -7,6 +7,7 @@ export const Container = styled.div`
     background-color: var(--color-primary-light);
     box-shadow: 4px 4px 15px var(--color-title-light);
     border-radius: 8px;
+    margin-bottom: 12px;
     figure{
         width: 100%;
         height: 125px;
