@@ -44,9 +44,6 @@ const Routes = () => {
       <Route path="/updateUser">
         <Profile />
       </Route>
-      <Route exact path={"/cadastro"}>
-        <RegisterUser />
-      </Route>
     </Switch>
   );
 };
