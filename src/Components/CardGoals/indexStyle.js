@@ -15,7 +15,7 @@ export const Container = styled.section`
     "Titulo Difficulty "
     " GoalIsCompleted PercentageAlreadyMade";
 `;
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   grid-area: Titulo;
   grid-column: 1;
   color: var(--color-title-light);

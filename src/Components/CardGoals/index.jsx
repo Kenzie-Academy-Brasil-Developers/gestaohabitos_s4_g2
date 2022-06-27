@@ -3,13 +3,13 @@ import {
   Difficulty,
   GoalIsCompleted,
   PercentageAlreadyMade,
-  Titulo,
+  Title,
 } from "./indexStyle";
 
 const CardGoals = () => {
   return (
     <Container>
-      <Titulo>Estudar 10 hrs por dia</Titulo>
+      <Title>Estudar 10 hrs por dia</Title>
       <Difficulty>Easy</Difficulty>
       <PercentageAlreadyMade>10%</PercentageAlreadyMade>
       <GoalIsCompleted>Não Concluido</GoalIsCompleted>
