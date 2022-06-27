@@ -1,11 +1,19 @@
+import {
+  Container,
+  Difficulty,
+  GoalIsCompleted,
+  PercentageAlreadyMade,
+  Titulo,
+} from "./indexStyle";
+
 const CardGoals = () => {
   return (
-    <section>
-      <h3>Estudar 10 hrs por dia</h3>
-      <div>Easy</div>
-      <span>10%</span>
-      <div>Não Concluido</div>
-    </section>
+    <Container>
+      <Titulo>Estudar 10 hrs por dia</Titulo>
+      <Difficulty>Easy</Difficulty>
+      <PercentageAlreadyMade>10%</PercentageAlreadyMade>
+      <GoalIsCompleted>Não Concluido</GoalIsCompleted>
+    </Container>
   );
 };
 export default CardGoals;
