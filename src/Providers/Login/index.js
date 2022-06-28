@@ -7,9 +7,12 @@ export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
   const history = useHistory();
+
   const [authenticated, setAuthenticated] = useState(false);
   const [token, setToken] = useState(localStorage.getItem("@Habitos:token" || ""))
+
   const onSubmitFunction = (data) => {
+    
     api
       .post("/sessions/", data)
       .then((response) => {
@@ -19,9 +22,11 @@ export const LoginProvider = ({ children }) => {
         setAuthenticated(true);
 
         localStorage.setItem("@Habitos:token", access);
+
         return history.push("/dashboard");
       })
       .catch((err) => toast.error("Email ou senha Inválidos"));
+
   };
 
   const logout = () => {

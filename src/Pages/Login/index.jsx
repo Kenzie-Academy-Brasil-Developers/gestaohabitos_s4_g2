@@ -24,7 +24,7 @@ const Login = () => {
     username: yup.string().required("Campo Obrigatorio"),
     password: yup
       .string()
-      .min(8, "minimo de 8 digitos")
+      .min(6, "minimo de 6 digitos")
       .required("campo Obrigatório"),
   });
 
