@@ -53,6 +53,10 @@ export const GroupMembersContainer = styled.div`
       background-color: #d9d9d9;
       margin-right: 5px;
       border-radius: 100%;
+      margin-bottom: 20px;
     }
+  }
+  p {
+    font-size: 0.75rem;
   }
 `;
