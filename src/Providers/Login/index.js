@@ -7,15 +7,18 @@ export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
   const history = useHistory();
-  const [autenticacao, setAutenticacao] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem("@Habitos:token" || ""))
   const onSubmitFunction = (data) => {
     api
       .post("/sessions/", data)
       .then((response) => {
-        console.log(response.data);
         const { access } = response.data;
+
+        setToken(access)
+        setAuthenticated(true);
+        
         localStorage.setItem("@Habitos:token", access);
-        setAutenticacao(true);
         return history.push("/dashboard");
       })
       .catch((err) => toast.error("Email ou senha Inválidos"));
@@ -24,12 +27,12 @@ export const LoginProvider = ({ children }) => {
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("Habitos:token"));
     if (token) {
-      return setAutenticacao(true);
+      return setAuthenticated(true);
     }
-  }, [autenticacao]);
+  }, [authenticated]);
 
   return (
-    <LoginContext.Provider value={{ onSubmitFunction, autenticacao }}>
+    <LoginContext.Provider value={{ onSubmitFunction, authenticated, token }}>
       {children}
     </LoginContext.Provider>
   );

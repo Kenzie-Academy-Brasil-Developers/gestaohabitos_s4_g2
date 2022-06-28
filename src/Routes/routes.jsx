@@ -1,5 +1,5 @@
-import { Route, Switch } from "react-router-dom";
-
+import { Switch } from "react-router-dom";
+import Route from ".";
 
 import Dashboard from "../Pages/Dash";
 import DashGroups from "../Pages/DashGroups";
@@ -13,51 +13,27 @@ import Blog from "../Pages/BlogPage";
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
+      <Route exact path="/" component={Home} />
 
-      <Route path="/login">
-        <Login />
-      </Route>
+      <Route path="/login" component={Login} />
 
-      <Route path="/register">
-        <RegisterUser />
-      </Route>
-      <Route path="/updateUser">
-        <Profile />
-      </Route>
-      <Route path="/blog">
-        <Blog />
-      </Route>
+      <Route path="/register" component={RegisterUser} />
 
-      <Route exact path="/dashboard">
-        <Dashboard />
-      </Route>
-      <Route path="/dashboard/group/:nameGroup">
-        <DashGroups />
-      </Route>
-      <Route path="/explorerGroups">
-        <Group />
-      </Route>
+      <Route path="/updateUser" component={Profile} />
 
+      <Route path="/blog" component={Blog} />
+
+      <Route isPrivate exact path="/dashboard" component={Dashboard} />
+
+      <Route
+        isPrivate
+        path="/dashboard/group/:nameGroup"
+        component={DashGroups}
+      />
+
+      <Route isPrivate path="/explorerGroups" component={Group} />
     </Switch>
   );
 };
 
 export default Routes;
-
-{
-  /* <Route path="/blog">
-<Blog/>
-</Route>
-<Route exact path="/dashboard">
-<Dashboard />
-</Route>
-<Route path="/explorerGroups">
-<DashGroups />
-</Route> 
-<Route path="/dashboard/group/:nameGroup">
-<Group />
-</Route>  */
-}
