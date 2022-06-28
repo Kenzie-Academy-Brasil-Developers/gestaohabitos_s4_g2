@@ -1,7 +1,9 @@
+import ListHabits from "../../Components/ListHabits"
+
 const Dashboard = () => {
     return (
         <div>
-            dash
+            <ListHabits/>
         </div>
     )
 }
