@@ -17,12 +17,19 @@ export const LoginProvider = ({ children }) => {
 
         setToken(access)
         setAuthenticated(true);
-        
+
         localStorage.setItem("@Habitos:token", access);
         return history.push("/dashboard");
       })
       .catch((err) => toast.error("Email ou senha Inválidos"));
   };
+
+  const logout = () => {
+    setToken("")
+    localStorage.clear()
+
+    history.push("/login")
+  }
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("Habitos:token"));
@@ -32,7 +39,7 @@ export const LoginProvider = ({ children }) => {
   }, [authenticated]);
 
   return (
-    <LoginContext.Provider value={{ onSubmitFunction, authenticated, token }}>
+    <LoginContext.Provider value={{ onSubmitFunction, authenticated, token, logout }}>
       {children}
     </LoginContext.Provider>
   );
