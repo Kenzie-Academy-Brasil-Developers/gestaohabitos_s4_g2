@@ -19,9 +19,9 @@ const Routes = () => {
 
       <Route path="/register" component={RegisterUser} />
 
-      <Route path="/updateUser" component={Profile} />
-
       <Route path="/blog" component={Blog} />
+
+      <Route isPrivate path="/updateUser" component={Profile} />
 
       <Route isPrivate exact path="/dashboard" component={Dashboard} />
 
