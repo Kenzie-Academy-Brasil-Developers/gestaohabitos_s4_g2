@@ -113,7 +113,11 @@ const Dashboard = () => {
       </ContainerCreateHbits>
 
       {showElement ? (
-        <ModalCustomizer titlte={"Cadastre seus Habits"} fechar={showOrHide}>
+        <ModalCustomizer
+          title="Cadastre seus Habits"
+          isOpen={showOrHide}
+          fn={showOrHide}
+        >
           <form onSubmit={handleSubmit(onSubmitFunction)}>
             <Input
               placeholder={"Nome do Habito"}
