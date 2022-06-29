@@ -1,3 +1,5 @@
+import { useModal } from "../../Providers/ControlModal";
+import { useHabits } from "../../Providers/Habitos";
 import {
   DivDone,
   DivButton,
@@ -10,9 +12,9 @@ import {
 } from "./indexStyle";
 
 const CardHabits = ({ habits }) => {
-  const Test = () => {
-    console.log("cliquei Aqui");
-  };
+  const { deleteHabitToList } = useHabits();
+  const { controlModalHabitEdit } = useModal();
+
   return (
     <DivContainer>
       <DivInfo>
@@ -22,19 +24,11 @@ const CardHabits = ({ habits }) => {
         </DivLevel>
         <DivCategory>
           <DivButton>
-            <button
-              onClick={() => {
-                Test();
-              }}
-            >
+            <button onClick={() => controlModalHabitEdit(habits.id)}>
               Editar
             </button>
             |
-            <button
-              onClick={() => {
-                Test();
-              }}
-            >
+            <button onClick={() => deleteHabitToList(habits.id)}>
               Deletar
             </button>
           </DivButton>
@@ -45,7 +39,9 @@ const CardHabits = ({ habits }) => {
       </DivInfo>
       <h4>{habits.title}</h4>
       <DivFrequency>
-        <DivDone done="true">Concluido</DivDone>
+        <DivDone done={habits.achieved}>
+          {habits.achieved ? "Concluido" : "Não Concuido"}
+        </DivDone>
 
         <span>{habits.frequency}</span>
       </DivFrequency>
