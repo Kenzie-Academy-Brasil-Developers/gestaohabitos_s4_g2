@@ -22,7 +22,7 @@ export const HabitsProvider = ({ children }) => {
             .then((response) => {
                 setHabits(response.data);
             });
-    }<<<<<<< feat/Habits
+    }
 
     useEffect(() => {
         if (!!token) {
