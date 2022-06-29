@@ -6,9 +6,6 @@ import {
   InformationsHabits,
 } from "./indexStyle";
 
-import { useModal } from "../../Providers/ControlModal";
-import { useHabits } from "../../Providers/Habitos";
-
 import imagem from "../../svg/imageDashboard.svg";
 import Button from "../../Components/Button";
 import { useContext, useState } from "react";
@@ -21,16 +18,13 @@ import { LoginContext } from "../../Providers/Login";
 import api from "../../Services";
 import { toast } from "react-toastify";
 import ListHabits from "../../Components/ListHabits";
+import HandleHabits from "../../Components/HandleHabits";
 
 const Dashboard = () => {
-  const { modalHabitEdit, controlModalHabitEdit } = useModal();
-  const { register, handleSubmit } = useForm();
-  const { updatedHabitToList, targetHabit } = useHabits();
-  
   const [showElement, setShowElement] = useState(false);
   const showOrHide = () => setShowElement(!showElement);
-  
-  const { userId,token } = useContext(LoginContext);
+
+  const { userId, token } = useContext(LoginContext);
 
   const schema = yup.object().shape({
     title: yup.string().required("Campo Obrigatório"),
@@ -47,6 +41,7 @@ const Dashboard = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmitFunction = (data) => {
+    console.log(data, userId);
     api
       .post(
         "/habits/",
@@ -56,7 +51,6 @@ const Dashboard = () => {
           difficulty: data.difficulty,
           frequency: data.frequency,
           achieved: false,
-
           how_much_achieved: 0,
           user: userId,
         },
@@ -157,49 +151,8 @@ const Dashboard = () => {
       </DivButton>
 
       <ListHabits />
-      <ModalCustomizer
-        title="editar habito"
-        isOpen={modalHabitEdit}
-        fn={controlModalHabitEdit}
-      >
-        <form
-          onSubmit={handleSubmit((callback) =>
-            updatedHabitToList(callback, targetHabit.id)
-          )}
-        >
-          <Input
-            label="progresso"
-            name="how_much_achieved"
-            register={register}
-            placeholder="Progresso %"
-            type="number"
-          />
-
-          <div>
-            <div>
-              <input
-                type="radio"
-                name="isAchieved"
-                value="true"
-                {...register("achieved")}
-              />
-              <label>Concluido</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                name="isAchieved"
-                value="false"
-                {...register("achieved")}
-              />
-              <label>Não concluido</label>
-            </div>
-          </div>
-
-          <Button type="submit">Atualizar habito</Button>
-        </form>
-      </ModalCustomizer>
+      <HandleHabits />
     </ContainerPageHabits>
-
-
+  );
+};
 export default Dashboard;
