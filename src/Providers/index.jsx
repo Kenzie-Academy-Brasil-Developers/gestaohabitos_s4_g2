@@ -1,7 +1,18 @@
+import { HabitsProvider } from "./Habitos";
 import { LoginProvider } from "./Login";
+import { RegisterProvider } from "./Register";
 
 const Providers = ({ children }) => {
-  return <LoginProvider>{children}</LoginProvider>;
+  return (
+    <>
+      <RegisterProvider>
+        <LoginProvider>
+          <HabitsProvider>{children}</HabitsProvider>
+        </LoginProvider>
+        ;
+      </RegisterProvider>
+    </>
+  );
 };
 
 export default Providers;

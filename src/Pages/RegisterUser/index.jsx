@@ -35,21 +35,16 @@ const RegisterUser = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm({
     resolver: yupResolver(formShema),
   });
 
-  const functionHandleSubmit = (data) => {
-    functionRegister(data);
-    reset();
-  };
   return (
     <Container>
       <RegistrationContent>
         <h2>Cadastre-se gratuitamente</h2>
         <ContainerForm>
-          <Form onSubmit={handleSubmit(functionHandleSubmit)}>
+          <Form onSubmit={handleSubmit(functionRegister)}>
             <FormHeader>
               <p>Cadastro</p>
               <IconFormHeader>

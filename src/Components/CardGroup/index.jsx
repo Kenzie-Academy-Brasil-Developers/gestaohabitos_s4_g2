@@ -5,17 +5,14 @@ import {
   LineBox,
 } from "./indexStyle";
 
-const CardGroup = () => {
+const CardGroup = ({ groups }) => {
   return (
     <Container>
       <LineBox></LineBox>
       <CardContent>
-        <h3>Aprendendo React juntos</h3>
+        <h3>{groups.name}</h3>
         <h5>descrição:</h5>
-        <p>
-          Somos um grupo de pessoas que possuem <span>tdah</span> e queremos nos
-          unir para estudarmos todos os dias reactjs{" "}
-        </p>
+        <p>{groups.description}</p>
         <GroupMembersContainer>
           <h5>Membros</h5>
           <div>
@@ -23,6 +20,7 @@ const CardGroup = () => {
             <div></div>
             <div></div>
           </div>
+          <p>Categoria: {groups.category} </p>
         </GroupMembersContainer>
       </CardContent>
     </Container>

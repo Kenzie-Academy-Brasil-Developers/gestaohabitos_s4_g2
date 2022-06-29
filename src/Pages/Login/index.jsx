@@ -24,7 +24,7 @@ const Login = () => {
     username: yup.string().required("Campo Obrigatorio"),
     password: yup
       .string()
-      .min(8, "minimo de 8 digitos")
+      .min(6, "minimo de 6 digitos")
       .required("campo Obrigatório"),
   });
 
@@ -72,7 +72,7 @@ const Login = () => {
           <Button>Entrar</Button>
           <p>
             Não tem conta?{" "}
-            <Link to="/cadastro">
+            <Link to="/register">
               <span>Faça seu Cadastro </span>
             </Link>
           </p>

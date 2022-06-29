@@ -1,6 +1,10 @@
+import ListHabits from "../../Components/ListHabits"
+
 const Dashboard = () => {
     return (
-        <h1>Dash</h1>
+        <div>
+            <ListHabits/>
+        </div>
     )
 }
 
