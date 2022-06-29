@@ -48,6 +48,7 @@ const Dashboard = () => {
           difficulty: data.difficulty,
           frequency: data.frequency,
           achieved: false,
+
           how_much_achieved: 0,
           user: userId,
         },
