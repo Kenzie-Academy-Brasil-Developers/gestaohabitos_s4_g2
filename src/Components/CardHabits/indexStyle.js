@@ -33,9 +33,9 @@ export const DivLevel = styled.div`
     width: 30px;
     height: 30px;
     background-color: ${(props) =>
-      props.tag === "Dificil"
-        ? "var(--color-tag-level-easy)"
-        : props.tag === "Medio"
+    props.tag === "Dificil"
+      ? "var(--color-tag-level-easy)"
+      : props.tag === "Medio"
         ? "var(--color-tag-level-medium)"
         : "var(--color-tag-level-easy)"};
     border-radius: 5px;
@@ -98,13 +98,17 @@ export const DivDone = styled.div`
   width: 100px;
   height: 30px;
   background-color: ${(props) =>
-    props.done === "true"
-      ? "var(--color-button-enter-group)"
+    props.done ? "var(--color-button-exit-group)"
       : "var(--color-button-enter-group)"};
   border-radius: 5px;
   box-shadow: 1px 3px 5px black;
   color: white;
   margin: 0 25px;
+  font-size: 0.85rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const DivFrequency = styled.div`
@@ -114,7 +118,7 @@ export const DivFrequency = styled.div`
   width: 100%;
 
   span {
-    font-size: 12px;
+    font-size: 0.65rem;
     margin: 0 25px;
   }
 `;
