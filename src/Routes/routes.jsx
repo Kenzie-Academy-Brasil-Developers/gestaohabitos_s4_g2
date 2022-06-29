@@ -10,6 +10,7 @@ import RegisterUser from "../Pages/RegisterUser";
 import Profile from "../Pages/Perfil";
 import Blog from "../Pages/BlogPage";
 
+
 const Routes = () => {
   return (
     <Switch>
