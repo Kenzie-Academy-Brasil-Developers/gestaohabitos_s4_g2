@@ -1,12 +1,7 @@
 import CardBlog from "../../Components/CardBlog";
 
-
-
 const Home = () => {
-  return (
-    <div>
-    </div>
-  );
+  return <div>Home</div>;
 };
 
 export default Home;

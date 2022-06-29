@@ -1,3 +1,5 @@
+
+import { DashboardProvider } from "./Habitos";
 import { ModalProvider } from "./ControlModal";
 import { HabitsProvider } from "./Habitos";
 import { LoginProvider } from "./Login";

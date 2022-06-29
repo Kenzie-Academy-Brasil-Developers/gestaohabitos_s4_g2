@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 const habitsContext = createContext([]);
 
 export const HabitsProvider = ({ children }) => {
+
     const [habits, setHabits] = useState([]);
     const [targetHabit, setTargetHabit] = useState({})
     const { token } = useContext(LoginContext);
@@ -21,7 +22,7 @@ export const HabitsProvider = ({ children }) => {
             .then((response) => {
                 setHabits(response.data);
             });
-    }
+    }<<<<<<< feat/Habits
 
     useEffect(() => {
         if (!!token) {

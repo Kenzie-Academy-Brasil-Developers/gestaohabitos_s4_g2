@@ -1,5 +1,9 @@
 const DashGroups = () => {
-  return <div>Dash grupos</div>;
+  return (
+    <div>
+      <h1>Dash grupos</h1>
+    </div>
+  );
 };
 
 export default DashGroups;
