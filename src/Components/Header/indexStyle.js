@@ -5,7 +5,7 @@ export const HeaderCustomizer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 12px;
+  padding: 5px 12px;
   box-shadow: 4px 4px 15px var(--bg-color-menu-mobile-light);
 
   figure {
@@ -13,6 +13,7 @@ export const HeaderCustomizer = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
     img {
       height: 80px;
     }
@@ -29,7 +30,7 @@ export const HeaderCustomizer = styled.header`
       left: 50%;
     }
 
-    @media screen and (min-width:768px){
+    @media screen and (min-width: 768px) {
       display: none;
     }
   }

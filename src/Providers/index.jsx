@@ -1,3 +1,4 @@
+import { DashboardProvider } from "./Habitos";
 import { LoginProvider } from "./Login";
 import { RegisterProvider } from "./Register";
 
