@@ -8,9 +8,13 @@ export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
   const history = useHistory();
-  const [autenticacao, setAutenticacao] = useState(false);
+
   const [userId, setUserId] = useState("");
-  const [tokenUser, setTokenUser] = useState("");
+
+  const [authenticated, setAuthenticated] = useState(false);
+  const [token, setToken] = useState(
+    localStorage.getItem("@Habitos:token" || "")
+  );
 
   const onSubmitFunction = (data) => {
     api
@@ -18,28 +22,38 @@ export const LoginProvider = ({ children }) => {
       .then((response) => {
         //console.log(response.data);
         const { access } = response.data;
-        setTokenUser(access);
+
         let decode = jwt_decode(access);
         setUserId(decode.user_id);
+
+        setToken(access);
+        setAuthenticated(true);
+
         localStorage.setItem("@Habitos:token", access);
-        setAutenticacao(true);
+
         return history.push("/dashboard");
       })
       .catch((err) => toast.error("Email ou senha Inválidos"));
+  };
+
+  const logout = () => {
+    setToken("");
+    localStorage.clear();
+
+    history.push("/login");
   };
 
   useEffect(() => {
     const token = JSON.parse(localStorage.getItem("Habitos:token"));
 
     if (token) {
-      setTokenUser(token);
-      return setAutenticacao(true);
+      return setAuthenticated(true);
     }
-  }, [autenticacao]);
+  }, [authenticated]);
 
   return (
     <LoginContext.Provider
-      value={{ onSubmitFunction, autenticacao, userId, tokenUser }}
+      value={{ onSubmitFunction, authenticated, token, logout, userId }}
     >
       {children}
     </LoginContext.Provider>

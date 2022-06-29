@@ -1,9 +1,33 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { LoginContext } from "../Login";
 
-export const DashboardContext = createContext();
+import api from "../../Services";
 
-export const DashboardProvider = ({ children }) => {
+const habitsContext = createContext([]);
+
+export const HabitsProvider = ({ children }) => {
+  const [habits, setHabits] = useState([]);
+  const { token } = useContext(LoginContext);
+
+  useEffect(() => {
+    if (!!token) {
+      api
+        .get("/habits/personal/", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          setHabits(response.data);
+        });
+    }
+  }, [token, habits]);
+
   return (
-    <DashboardContext.Provider value={{}}>{children}</DashboardContext.Provider>
+    <habitsContext.Provider value={{ habits, setHabits }}>
+      {children}
+    </habitsContext.Provider>
   );
 };
+
+export const useHabits = () => useContext(habitsContext);

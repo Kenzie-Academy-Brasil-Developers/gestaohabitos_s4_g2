@@ -16,12 +16,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginContext } from "../../Providers/Login";
 import api from "../../Services";
 import { toast } from "react-toastify";
+import ListHabits from "../../Components/ListHabits";
 
 const Dashboard = () => {
   const [showElement, setShowElement] = useState(false);
   const showOrHide = () => setShowElement(!showElement);
   const { userId } = useContext(LoginContext);
-  const { tokenUser } = useContext(LoginContext);
+  const { token } = useContext(LoginContext);
 
   const schema = yup.object().shape({
     title: yup.string().required("Campo Obrigatório"),
@@ -50,9 +51,10 @@ const Dashboard = () => {
           how_much_achieved: 0,
           user: userId,
         },
-        { headers: { Authorization: `Bearer ${tokenUser}` } }
+        { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((_) => {
+        reset();
         toast.success("Sucesso ao criar o habito");
       })
       .catch((err) => toast.error("Erro ao criar Habito"));
@@ -144,6 +146,8 @@ const Dashboard = () => {
       <DivButton>
         <Button onClick={showOrHide}>Adicionar habito +</Button>
       </DivButton>
+
+      <ListHabits />
     </ContainerPageHabits>
   );
 };
