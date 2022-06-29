@@ -9,7 +9,7 @@ export const LoginContext = createContext();
 export const LoginProvider = ({ children }) => {
   const history = useHistory();
 
-  const [userId, setUserId] = useState("");
+  const [userId, setUserId] = useState(localStorage.getItem("@Habitos:userId") || "");
 
   const [authenticated, setAuthenticated] = useState(false);
   const [token, setToken] = useState(
@@ -25,7 +25,7 @@ export const LoginProvider = ({ children }) => {
 
         let decode = jwt_decode(access);
         setUserId(decode.user_id);
-
+        localStorage.setItem("@Habitos:userId", decode.user_id)
         setToken(access);
         setAuthenticated(true);
 
