@@ -1,9 +1,8 @@
-
-import { DashboardProvider } from "./Habitos";
 import { ModalProvider } from "./ControlModal";
 import { HabitsProvider } from "./Habitos";
 import { LoginProvider } from "./Login";
 import { RegisterProvider } from "./Register";
+import { GoalsProvider } from "./Metas";
 
 const Providers = ({ children }) => {
   return (
@@ -11,7 +10,9 @@ const Providers = ({ children }) => {
       <RegisterProvider>
         <LoginProvider>
           <HabitsProvider>
-            <ModalProvider>{children}</ModalProvider>
+            <GoalsProvider>
+              <ModalProvider>{children}</ModalProvider>
+            </GoalsProvider>
           </HabitsProvider>
         </LoginProvider>
       </RegisterProvider>
