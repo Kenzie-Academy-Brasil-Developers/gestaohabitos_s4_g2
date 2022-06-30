@@ -1,12 +1,14 @@
 import { createContext, useContext, useState } from "react";
-import api from "../../Services";
 import { useHabits } from "../Habitos";
 import { LoginContext } from "../Login";
+
+import api from "../../Services";
 
 const modalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
     const [modalHabitEdit, setModalHabitEdit] = useState(false);
+    const [modalGoalsAdd, setModalGoalsAdd] = useState(true);
     const { setTargetHabit } = useHabits()
     const { token } = useContext(LoginContext)
 
@@ -24,8 +26,12 @@ export const ModalProvider = ({ children }) => {
             })
     }
 
+    const controlModalGoalsAdd = () => {
+        setModalGoalsAdd(!modalGoalsAdd)
+    }
+
     return (
-        <modalContext.Provider value={{ controlModalHabitEdit, modalHabitEdit }}>
+        <modalContext.Provider value={{ controlModalHabitEdit, modalHabitEdit, controlModalGoalsAdd, modalGoalsAdd }}>
             {children}
         </modalContext.Provider>
     )

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {
   Carrossel,
   ContainerInput,
@@ -132,4 +133,14 @@ const Group = () => {
   );
 };
 
+=======
+const Group = () => {
+  return (
+    <div>
+      <h1>nome do grupo</h1>
+    </div>
+  );
+};
+
+>>>>>>> 63914f6ba65068d7730e142a5a0b73fc2cd484d7
 export default Group;
