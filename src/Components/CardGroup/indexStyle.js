@@ -5,6 +5,7 @@ export const Container = styled.section`
   max-width: 308px;
   margin: 10px auto;
   padding: 25px;
+  margin: 5px;
   display: flex;
   background-color: var(--color-primary-light);
   box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
