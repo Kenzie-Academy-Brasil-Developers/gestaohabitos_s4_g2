@@ -1,7 +1,9 @@
 const Group = () => {
-    return (
-        <div>Grupo pagina</div>
-    )
-}
+  return (
+    <div>
+      <h1>nome do grupo</h1>
+    </div>
+  );
+};
 
-export default Group
+export default Group;
