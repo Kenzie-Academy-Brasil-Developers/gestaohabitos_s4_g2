@@ -39,6 +39,9 @@ export const NavegationCustumizer = styled.nav`
             margin-top: 0px;
             flex-direction: row;
             align-items: center;
+            li{
+                cursor: pointer;
+            }
             li a{
                 color: var(--color-text-light);
                 font-weight: 600;

@@ -6,6 +6,7 @@ const goalsContext = createContext();
 
 export const GoalsProvider = ({ children }) => {
     const [goals, setGoals] = useState([]);
+    const [targetGoal, setTargetGoal] = useState({})
     const { token } = useContext(LoginContext)
 
     const loadGoals = (id) => {
@@ -34,11 +35,24 @@ export const GoalsProvider = ({ children }) => {
         }).catch((err) => console.log(err))
     }
 
+    const deleteGoalToGroup = (id) => {
+        api.delete(`/goals/${id}`)
+            .then((_) => loadGoals())
+    }
+
+    const updatedGoalToGroup = (data, id) => {
+        api.patch(`/goals/${id}/`, data, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+    }
+
     useEffect(() => {
         loadGoals(1331)
     }, [goals])
 
-    return <goalsContext.Provider value={{ goals, createGoalToGroup }}>
+    return <goalsContext.Provider value={{ goals, createGoalToGroup, deleteGoalToGroup, updatedGoalToGroup, targetGoal, setTargetGoal }}>
         {children}
     </goalsContext.Provider>
 }
