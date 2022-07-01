@@ -1,3 +1,5 @@
+
+import CreateGroup from "../../Components/CardCreateGroup"
 import {
   Carrossel,
   ContainerInput,
@@ -61,6 +63,8 @@ const Group = () => {
 
   //console.log(search);
   return (
+    <>
+    <CreateGroup />
     <ContainerList>
       <h1>Grupos</h1>
       <button onClick={() => cleanFilter()}>Limpar Pesquisa</button>
@@ -130,6 +134,7 @@ const Group = () => {
         </Button>
       </DivButtons>
     </ContainerList>
+    </>
   );
 };
 
