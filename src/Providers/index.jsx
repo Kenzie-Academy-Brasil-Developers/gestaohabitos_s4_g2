@@ -1,10 +1,12 @@
-
-import { DashboardProvider } from "./Habitos";
 import { ModalProvider } from "./ControlModal";
 import { HabitsProvider } from "./Habitos";
 import { LoginProvider } from "./Login";
 import { RegisterProvider } from "./Register";
+
 import {GroupsProvider} from './Grupos';
+
+import { GoalsProvider } from "./Metas";
+
 
 const Providers = ({ children }) => {
   return (
@@ -14,7 +16,9 @@ const Providers = ({ children }) => {
         <LoginProvider>
           <GroupsProvider>
           <HabitsProvider>
-            <ModalProvider>{children}</ModalProvider>
+            <GoalsProvider>
+              <ModalProvider>{children}</ModalProvider>
+            </GoalsProvider>
           </HabitsProvider>
           </GroupsProvider>
         </LoginProvider>
