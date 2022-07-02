@@ -1,11 +1,12 @@
 import { useHabits } from "../../Providers/Habitos";
 import CardHabits from "../CardHabits";
+import { Container } from "./indexStye";
 
 const ListHabits = () => {
   const { habits } = useHabits();
 
   return (
-    <div>
+    <Container>
       <h2>Meus Habitos</h2>
       <div>
         {habits.length === 0 ? (
@@ -14,7 +15,7 @@ const ListHabits = () => {
           habits.map((habit) => <CardHabits habits={habit} key={habit.id} />)
         )}
       </div>
-    </div>
+    </Container>
   );
 };
 
