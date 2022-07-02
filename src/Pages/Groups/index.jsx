@@ -33,11 +33,13 @@ const Group = () => {
   };
   const slideLeft = (e) => {
     e.preventDefault();
+    //console.log(carrossel.current.offsetWidth);
     carrossel.current.scrollLeft -= carrossel.current.offsetWidth;
   };
 
   const slideRight = (e) => {
     e.preventDefault();
+    //console.log(carrossel.current.offsetWidth);
     carrossel.current.scrollLeft += carrossel.current.offsetWidth;
   };
 
@@ -105,7 +107,7 @@ const Group = () => {
           onClick={slideRight}
           size={90}
         />
-        <MobileList ref={carrossel}>
+        <MobileList>
           {filteredGroups !== ""
             ? filteredGroups.map((group) => {
                 return <CardGroup groups={group} />;
