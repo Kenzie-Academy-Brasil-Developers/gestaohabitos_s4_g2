@@ -3,13 +3,13 @@ import Route from ".";
 
 import Dashboard from "../Pages/Dash";
 import DashGroups from "../Pages/DashGroups";
+import DashGroupInformation from "../Pages/DashGroupInformation";
 import Group from "../Pages/Groups";
 import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import RegisterUser from "../Pages/RegisterUser";
 import Profile from "../Pages/Perfil";
 import Blog from "../Pages/BlogPage";
-
 
 const Routes = () => {
   return (
@@ -33,6 +33,7 @@ const Routes = () => {
       />
 
       <Route isPrivate path="/explorerGroups" component={Group} />
+      <Route isPrivate path="/group/:id" component={DashGroupInformation} />
     </Switch>
   );
 };
