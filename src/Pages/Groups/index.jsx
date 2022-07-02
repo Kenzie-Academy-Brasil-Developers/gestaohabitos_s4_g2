@@ -18,7 +18,8 @@ import CardGroup from "../../Components/CardGroup";
 
 import { useEffect, useRef, useState, useTransition } from "react";
 import api from "../../Services";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useGroup } from "../../Providers/Grupos";
 
 const Group = () => {
   const carrossel = useRef(null);
@@ -27,6 +28,7 @@ const Group = () => {
   const [search, setSearch] = useState("");
   const [filteredGroups, setFilteredGroups] = useState("");
   const history = useHistory();
+  const { getSpecificGroup } = useGroup();
 
   const navigation = () => {
     return console.log("aqui");
@@ -93,11 +95,19 @@ const Group = () => {
         <Carrossel ref={carrossel}>
           {filteredGroups !== ""
             ? filteredGroups.map((group) => {
-                return <CardGroup groups={group} />;
+                return (
+                  <div onClick={getSpecificGroup(group)}>
+                    <CardGroup key={group.id} groups={group} />
+                  </div>
+                );
               })
             : groups
             ? groups.map((group) => {
-                return <CardGroup groups={group} />;
+                return (
+                  <div onClick={getSpecificGroup(group)}>
+                    <CardGroup key={group.id} groups={group} />
+                  </div>
+                );
               })
             : null}
         </Carrossel>
@@ -110,11 +120,19 @@ const Group = () => {
         <MobileList>
           {filteredGroups !== ""
             ? filteredGroups.map((group) => {
-                return <CardGroup groups={group} />;
+                return (
+                  <div onClick={getSpecificGroup(group)}>
+                    <CardGroup key={group.id} groups={group} />
+                  </div>
+                );
               })
             : groups
             ? groups.map((group) => {
-                return <CardGroup groups={group} />;
+                return (
+                  <div onClick={getSpecificGroup(group)}>
+                    <CardGroup key={group.id} groups={group} />
+                  </div>
+                );
               })
             : null}
         </MobileList>
