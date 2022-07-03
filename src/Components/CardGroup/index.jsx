@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useGroup } from "../../Providers/Grupos";
 import {
   CardContent,
   Container,
@@ -7,8 +7,9 @@ import {
 } from "./indexStyle";
 
 const CardGroup = ({ groups }) => {
+  const { getSpecificGroup } = useGroup();
   return (
-    <Container>
+    <Container onClick={() => getSpecificGroup(groups)}>
       <LineBox></LineBox>
       <CardContent>
         <h3>{groups.name}</h3>

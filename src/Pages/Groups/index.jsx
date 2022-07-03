@@ -1,5 +1,4 @@
-
-import CreateGroup from "../../Components/CardCreateGroup"
+import CreateGroup from "../../Components/CardCreateGroup";
 import {
   Carrossel,
   ContainerInput,
@@ -23,25 +22,28 @@ import { useGroup } from "../../Providers/Grupos";
 
 const Group = () => {
   const carrossel = useRef(null);
+
   const [groups, setGroups] = useState();
   const [atualPage, setAtualPage] = useState(1);
   const [search, setSearch] = useState("");
   const [filteredGroups, setFilteredGroups] = useState("");
+
   const history = useHistory();
-  const { getSpecificGroup } = useGroup();
+
+  const { targetGroup, member } = useGroup();
+
+  console.log(member);
 
   const navigation = () => {
     return console.log("aqui");
   };
   const slideLeft = (e) => {
     e.preventDefault();
-    //console.log(carrossel.current.offsetWidth);
     carrossel.current.scrollLeft -= carrossel.current.offsetWidth;
   };
 
   const slideRight = (e) => {
     e.preventDefault();
-    //console.log(carrossel.current.offsetWidth);
     carrossel.current.scrollLeft += carrossel.current.offsetWidth;
   };
 
@@ -65,95 +67,94 @@ const Group = () => {
     setAtualPage(1);
   };
 
-  //console.log(search);
   return (
     <>
-    <CreateGroup />
-    <ContainerList>
-      <h1>Grupos</h1>
-      <button onClick={() => cleanFilter()}>Limpar Pesquisa</button>
-      <ContainerInput>
-        <input
-          onChange={(e) => setSearch(e.target.value)}
-          type={"text"}
-          placeholder={"Pesquise um Grupo"}
-          value={search}
-        />
-        <Button onClick={() => searchGroups(search)}>
-          <AiOutlineSearch size={25} />
-        </Button>
-      </ContainerInput>
-      <h3>Conheça os grupos relacionados a pessoas com tdah :</h3>
+      <CreateGroup />
+      <ContainerList>
+        <h1>Grupos</h1>
+        <button onClick={() => cleanFilter()}>Limpar Pesquisa</button>
+        <ContainerInput>
+          <input
+            onChange={(e) => setSearch(e.target.value)}
+            type={"text"}
+            placeholder={"Pesquise um Grupo"}
+            value={search}
+          />
+          <Button onClick={() => searchGroups(search)}>
+            <AiOutlineSearch size={25} />
+          </Button>
+        </ContainerInput>
+        <h3>Conheça os grupos relacionados a pessoas com tdah :</h3>
 
-      <ListGroups>
-        <AiOutlineArrowLeft
-          className="icon"
-          cursor="pointer"
-          onClick={slideLeft}
-          size={90}
-        />
-        <Carrossel ref={carrossel}>
-          {filteredGroups !== ""
-            ? filteredGroups.map((group) => {
-                return (
-                  <div onClick={getSpecificGroup(group)}>
-                    <CardGroup key={group.id} groups={group} />
-                  </div>
-                );
-              })
-            : groups
-            ? groups.map((group) => {
-                return (
-                  <div onClick={getSpecificGroup(group)}>
-                    <CardGroup key={group.id} groups={group} />
-                  </div>
-                );
-              })
-            : null}
-        </Carrossel>
-        <AiOutlineArrowRight
-          className="icon"
-          cursor="pointer"
-          onClick={slideRight}
-          size={90}
-        />
-        <MobileList>
-          {filteredGroups !== ""
-            ? filteredGroups.map((group) => {
-                return (
-                  <div onClick={getSpecificGroup(group)}>
-                    <CardGroup key={group.id} groups={group} />
-                  </div>
-                );
-              })
-            : groups
-            ? groups.map((group) => {
-                return (
-                  <div onClick={getSpecificGroup(group)}>
-                    <CardGroup key={group.id} groups={group} />
-                  </div>
-                );
-              })
-            : null}
-        </MobileList>
-      </ListGroups>
-      <DivButtons>
-        <Button
-          onClick={() =>
-            setAtualPage(atualPage > 1 ? atualPage - 1 : atualPage)
-          }
-        >
-          Previos Page
-        </Button>
-        <Button
-          onClick={() => {
-            setAtualPage(atualPage + 1);
-          }}
-        >
-          Next Page
-        </Button>
-      </DivButtons>
-    </ContainerList>
+        <ListGroups>
+          <AiOutlineArrowLeft
+            className="icon"
+            cursor="pointer"
+            onClick={slideLeft}
+            size={90}
+          />
+          <Carrossel ref={carrossel}>
+            {filteredGroups !== ""
+              ? filteredGroups.map((group) => {
+                  return (
+                    <div>
+                      <CardGroup key={group.id} groups={group} />
+                    </div>
+                  );
+                })
+              : groups
+              ? groups.map((group) => {
+                  return (
+                    <div>
+                      <CardGroup key={group.id} groups={group} />
+                    </div>
+                  );
+                })
+              : null}
+          </Carrossel>
+          <AiOutlineArrowRight
+            className="icon"
+            cursor="pointer"
+            onClick={slideRight}
+            size={90}
+          />
+          <MobileList>
+            {filteredGroups !== ""
+              ? filteredGroups.map((group) => {
+                  return (
+                    <div>
+                      <CardGroup key={group.id} groups={group} />
+                    </div>
+                  );
+                })
+              : groups
+              ? groups.map((group) => {
+                  return (
+                    <div>
+                      <CardGroup key={group.id} groups={group} />
+                    </div>
+                  );
+                })
+              : null}
+          </MobileList>
+        </ListGroups>
+        <DivButtons>
+          <Button
+            onClick={() =>
+              setAtualPage(atualPage > 1 ? atualPage - 1 : atualPage)
+            }
+          >
+            Previos Page
+          </Button>
+          <Button
+            onClick={() => {
+              setAtualPage(atualPage + 1);
+            }}
+          >
+            Next Page
+          </Button>
+        </DivButtons>
+      </ContainerList>
     </>
   );
 };

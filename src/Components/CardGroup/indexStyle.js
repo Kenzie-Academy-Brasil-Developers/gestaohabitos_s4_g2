@@ -10,6 +10,7 @@ export const Container = styled.section`
   background-color: var(--color-primary-light);
   box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 15px;
+  cursor: pointer;
 `;
 
 export const LineBox = styled.div`

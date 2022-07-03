@@ -5,7 +5,7 @@ import Button from '../Button';
 import{useForm} from 'react-hook-form';
 import{HiUserGroup} from "react-icons/hi";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useCreateGroup} from "../../Providers/Grupos";
+import {useGroup} from "../../Providers/Grupos";
 
 const CreateGroup = () =>{
     const formShema = yup.object().shape({
@@ -14,8 +14,7 @@ const CreateGroup = () =>{
         category: yup.string().required("Campo obrigatório"),
     });
    
-    const {functionCreateGroup, group} = useCreateGroup();
-    console.log(group);
+    const {functionCreateGroup} = useGroup();
     const {
         register,
         handleSubmit,

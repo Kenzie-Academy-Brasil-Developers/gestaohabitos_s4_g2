@@ -10,12 +10,12 @@ export const LoginProvider = ({ children }) => {
   const history = useHistory();
 
   const [userId, setUserId] = useState(
-    localStorage.getItem("@Habitos:userId") || ""
+    JSON.parse(localStorage.getItem("@Habitos:userId")) || ""
   );
 
   const [authenticated, setAuthenticated] = useState(false);
   const [token, setToken] = useState(
-    localStorage.getItem("@Habitos:token" || "")
+    localStorage.getItem("@Habitos:token") || ""
   );
 
   const onSubmitFunction = (data) => {
