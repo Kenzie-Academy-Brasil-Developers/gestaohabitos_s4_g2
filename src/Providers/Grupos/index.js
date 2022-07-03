@@ -1,70 +1,85 @@
-<<<<<<< HEAD
-import { createContext, useContext, useState } from "react";
+
+import { LoginContext } from "../Login";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import api from "../../Services";
-import { LoginContext } from "../Login";
-
-export const UserGroupContext = createContext();
-
-export const UserGroupProvider = ({ children }) => {
-  const [member, setMember] = useState(false);
-  const { userId } = useContext(LoginContext);
-  const history = useHistory();
-
-  const getSpecificGroup = (group) => {
-    history.push(`/group/${group.id}`);
-    group.find((user) => {
-      if (user.users_on_group.id === userId) {
-        setMember(true);
-      }
-      setMember(false);
-    });
-  };
-  return (
-    <UserGroupContext.Provider value={{ getSpecificGroup, member, setMember }}>
-      {children}
-    </UserGroupContext.Provider>
-  );
-};
-
-export const useGroup = () => useContext(UserGroupContext);
-=======
-import{ createContext, useContext, useState} from 'react';
-import api from '../../Services';
-import { LoginContext } from "../Login";
-
-import {toast} from  'react-toastify';
+import { toast } from 'react-toastify';
 
 export const GroupsContext = createContext();
 
+export const GroupsProvider = ({ children }) => {
+  const { token, userId } = useContext(LoginContext);
+  const [targetGroup, setNewGroup] = useState(JSON.parse(localStorage.getItem("@GestãoHabitos/Group")) || {});
+  const [member, setMember] = useState(localStorage.getItem("@GestãoHabitos/GroupMember") || false);
 
-export const GroupsProvider = ({children}) => {
-       
-    const { token } = useContext(LoginContext);
+  const history = useHistory();
 
-    const functionCreateGroup = (data) =>{
-        console.log(token);
-        api.post("/groups/", data , {
-            headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-        }).then((_) => {
-            toast.success("Sucesso ao criar Grupo");
-        }).catch((_) =>{
-            toast.error("Erro ao criar Grupo");
-        });
-          
-    }
+  useEffect(() => {
+    const idMemberGroup = targetGroup.users_on_group.map((user) => user.id)
 
-    
-    return (
+    setMember(idMemberGroup.includes(userId))
+    localStorage.setItem("@GestãoHabitos/GroupMember", idMemberGroup.includes(userId))
 
-        <GroupsContext.Provider value={{functionCreateGroup}  }>
-            {children}
-        </GroupsContext.Provider>
 
-    )
+  }, [targetGroup])
+
+  const getSpecificGroup = (group) => {
+
+    history.push(`/group/${group.id}`);
+    api.get(`/groups/${group.id}/`)
+      .then((response) => {
+        setNewGroup(response.data);
+        localStorage.setItem("@GestãoHabitos/Group", JSON.stringify(response.data))
+
+      })
+      .catch((err) => console.log(err))
+  };
+
+  const functionCreateGroup = (data) => {
+    api.post("/groups/", data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((_) => {
+      toast.success("Sucesso ao criar Grupo");
+    }).catch((_) => {
+      toast.error("Erro ao criar Grupo");
+    });
+
+  }
+
+  const getInOnGroup = (param) => {
+    api.post(`/groups/${targetGroup.id}/subscribe/`, param, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then((_) => {
+        toast.success("Você se inscreveu no grupo")
+        localStorage.setItem("@GestãoHabitos/GroupMember", true)
+      })
+      .catch((err) => console.log(err))
+  }
+
+  const getOutOnGroup = () => {
+    api.delete(`/groups/${targetGroup.id}/unsubscribe/`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }).then((_) => {
+      toast.success("Você saiu do grupo")
+      history.push("/explorerGroups")
+    })
+      .catch((err) => console.log(err))
+  }
+
+
+  return (
+    <GroupsContext.Provider value={{ functionCreateGroup, getSpecificGroup, member, setMember, targetGroup, getInOnGroup, getOutOnGroup }}>
+      {children}
+    </GroupsContext.Provider>
+
+  )
 }
 
-export const useCreateGroup = () => useContext(GroupsContext);
->>>>>>> 7486508800d87992a8f5242a008760f789aa7721
+export const useGroup = () => useContext(GroupsContext);
