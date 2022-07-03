@@ -9,16 +9,19 @@ export const GroupsContext = createContext();
 
 export const GroupsProvider = ({ children }) => {
   const { token, userId } = useContext(LoginContext);
-  const [targetGroup, setNewGroup] = useState(JSON.parse(localStorage.getItem("@GestãoHabitos/Group")) || {});
+  const [targetGroup, setNewGroup] = useState(JSON.parse(localStorage.getItem("@GestãoHabitos/Group")) || false);
   const [member, setMember] = useState(localStorage.getItem("@GestãoHabitos/GroupMember") || false);
 
   const history = useHistory();
 
   useEffect(() => {
-    const idMemberGroup = targetGroup.users_on_group.map((user) => user.id)
+    if (!!targetGroup) {
+      const idMemberGroup = targetGroup.users_on_group.map((user) => user.id)
 
-    setMember(idMemberGroup.includes(userId))
-    localStorage.setItem("@GestãoHabitos/GroupMember", idMemberGroup.includes(userId))
+      setMember(idMemberGroup.includes(userId))
+      localStorage.setItem("@GestãoHabitos/GroupMember", idMemberGroup.includes(userId))
+    }
+
 
 
   }, [targetGroup])
