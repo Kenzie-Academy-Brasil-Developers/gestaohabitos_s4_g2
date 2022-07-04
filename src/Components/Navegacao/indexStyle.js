@@ -10,8 +10,10 @@ export const NavegationCustumizer = styled.nav`
     height: 100vh;
     width: 124px;
     padding: 0px 32px;
-    top: 2.5%;
+    top: 0.5%;
     right: 0%;
+
+
 
 
     ul{

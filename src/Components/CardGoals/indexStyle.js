@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+  position: relative;
   width: 70%;
   max-width: 400px;
-  margin: auto;
+  margin: 16px auto;
   padding: 15px;
   gap: 15px 0;
   background-color: #fff;
@@ -14,6 +15,7 @@ export const Container = styled.section`
   grid-template-areas:
     "Titulo Difficulty "
     " GoalIsCompleted PercentageAlreadyMade";
+
 `;
 export const Title = styled.h3`
   grid-area: Titulo;
@@ -36,6 +38,7 @@ export const PercentageAlreadyMade = styled.span`
   grid-area: PercentageAlreadyMade;
   grid-column: 1;
   align-self: flex-end;
+  width: 20px;
 `;
 
 export const GoalIsCompleted = styled.div`
@@ -46,7 +49,7 @@ export const GoalIsCompleted = styled.div`
   padding: 5px;
   color: var(--color-primary-light);
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: var(--color-tag-level-easy);
+  background-color: ${(props) => props.isCompleted ? "var(--color-tag-level-easy)" : "var(--color-tag-level-hard)"};
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   height: 20px;
 `;
