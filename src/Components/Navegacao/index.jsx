@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { LoginContext } from "../../Providers/Login";
 import { NavegationCustumizer } from "./indexStyle";
 
+import { FiX } from "react-icons/fi";
+
 const Navegation = ({ isOpen }) => {
   const { token, logout } = useContext(LoginContext);
+
   return (
     <NavegationCustumizer open={isOpen}>
       <ul>

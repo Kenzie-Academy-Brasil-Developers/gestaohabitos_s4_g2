@@ -9,7 +9,7 @@ const modalContext = createContext();
 
 export const ModalProvider = ({ children }) => {
     const [modalHabitEdit, setModalHabitEdit] = useState(false);
-    const [modalGoalsAdd, setModalGoalsAdd] = useState(true);
+    const [modalGoalsAdd, setModalGoalsAdd] = useState(false);
     const [modalGoalsEdit, setModalGoalsEdit] = useState(false)
 
     const { setTargetHabit } = useHabits()
@@ -40,8 +40,12 @@ export const ModalProvider = ({ children }) => {
         setModalGoalsAdd(!modalGoalsAdd)
     }
 
+    const closeModalGoalEdit = () => {
+        setModalGoalsEdit(!modalGoalsEdit)
+    }
+
     return (
-        <modalContext.Provider value={{ controlModalHabitEdit, modalHabitEdit, controlModalGoalsAdd, modalGoalsAdd, controlModalGoalEdit, modalGoalsEdit }}>
+        <modalContext.Provider value={{ controlModalHabitEdit, modalHabitEdit, controlModalGoalsAdd, modalGoalsAdd, controlModalGoalEdit, closeModalGoalEdit, modalGoalsEdit }}>
             {children}
         </modalContext.Provider>
     )

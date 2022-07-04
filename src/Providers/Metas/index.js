@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import api from "../../Services/"
+import { useGroup } from "../Grupos";
 import { LoginContext } from "../Login";
 
 const goalsContext = createContext();
@@ -7,10 +8,12 @@ const goalsContext = createContext();
 export const GoalsProvider = ({ children }) => {
     const [goals, setGoals] = useState([]);
     const [targetGoal, setTargetGoal] = useState({})
+    const { targetGroup } = useGroup()
     const { token } = useContext(LoginContext)
 
-    const loadGoals = (id) => {
-        api.get(`/goals/?group=${id}`, {
+
+    const loadGoals = () => {
+        api.get(`/goals/?group=${targetGroup.id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -32,15 +35,21 @@ export const GoalsProvider = ({ children }) => {
             }
         }).then((response) => {
             setGoals([...goals, response.data])
+            loadGoals()
         }).catch((err) => console.log(err))
     }
 
     const deleteGoalToGroup = (id) => {
-        api.delete(`/goals/${id}`)
+        api.delete(`/goals/${id}/`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
             .then((_) => loadGoals())
     }
 
     const updatedGoalToGroup = (data, id) => {
+        console.log("editar")
         api.patch(`/goals/${id}/`, data, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -49,7 +58,7 @@ export const GoalsProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        loadGoals(1331)
+        loadGoals()
     }, [goals])
 
     return <goalsContext.Provider value={{ goals, createGoalToGroup, deleteGoalToGroup, updatedGoalToGroup, targetGoal, setTargetGoal }}>
