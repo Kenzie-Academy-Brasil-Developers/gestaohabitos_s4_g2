@@ -58,6 +58,7 @@ export const GroupsProvider = ({ children }) => {
     })
       .then((_) => {
         toast.success("Você se inscreveu no grupo")
+        setMember(true)
         localStorage.setItem("@GestãoHabitos/GroupMember", true)
       })
       .catch((err) => console.log(err))
@@ -70,6 +71,8 @@ export const GroupsProvider = ({ children }) => {
       }
     }).then((_) => {
       toast.success("Você saiu do grupo")
+      setMember(false)
+      localStorage.setItem("@GestãoHabitos/GroupMember", false)
       history.push("/explorerGroups")
     })
       .catch((err) => console.log(err))

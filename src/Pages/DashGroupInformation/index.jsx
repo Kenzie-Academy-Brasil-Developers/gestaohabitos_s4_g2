@@ -11,7 +11,11 @@ import { useModal } from "../../Providers/ControlModal";
 
 import { useGroup } from "../../Providers/Grupos";
 import { useGoals } from "../../Providers/Metas";
+<<<<<<< HEAD
 import { useActivities } from "../../Providers/Atividades";
+=======
+import { ContainerInfor, ContainerLists } from "./indexStyle";
+>>>>>>> 2f24c79aed0d7822b0d5ddc36fdde9e67c9eaf6d
 
 const GroupInformation = () => {
   const { member, targetGroup, getInOnGroup, getOutOnGroup } = useGroup();
@@ -27,6 +31,31 @@ const GroupInformation = () => {
   const { register, handleSubmit } = useForm();
   return (
     <>
+      <HandleGoal />
+      <ContainerInfor member={member}>
+        <h1>{targetGroup.name}</h1>
+        <div>
+          <div>
+            <p>
+              <strong>Descrição:</strong> {targetGroup.description}
+            </p>
+            <p>
+              <strong>Categoria:</strong> {targetGroup.category}
+            </p>
+          </div>
+          <Button
+            onClick={() => {
+              member ? getOutOnGroup() : getInOnGroup();
+            }}
+          >
+            {member ? "Sair" : "Entrar"}
+          </Button>
+        </div>
+      </ContainerInfor>
+      <ContainerLists>
+        <ListGoals />
+      </ContainerLists>
+      
       <ModalCustomizer
         isOpen={modalGoalsAdd}
         title="Adicionar uma meta"
@@ -51,6 +80,7 @@ const GroupInformation = () => {
           <Button type="submit">Adicionar Meta</Button>
         </form>
       </ModalCustomizer>
+<<<<<<< HEAD
 
       <ModalCustomizer
         isOpen={modalActivitiesAdd}
@@ -94,6 +124,8 @@ const GroupInformation = () => {
       </section>
       <ListGoals />
       <ListActivities />
+=======
+>>>>>>> 2f24c79aed0d7822b0d5ddc36fdde9e67c9eaf6d
     </>
   );
 };

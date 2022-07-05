@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   position: relative;
-  width: 70%;
+  width: 260px;
   max-width: 400px;
   margin: 16px auto;
   padding: 15px;
@@ -52,4 +52,5 @@ export const GoalIsCompleted = styled.div`
   background-color: ${(props) => props.isCompleted ? "var(--color-tag-level-easy)" : "var(--color-tag-level-hard)"};
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   height: 20px;
+  font-size: 0.75rem;
 `;
