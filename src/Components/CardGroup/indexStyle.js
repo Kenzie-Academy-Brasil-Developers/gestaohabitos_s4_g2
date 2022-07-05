@@ -14,7 +14,6 @@ export const Container = styled.section`
 `;
 
 export const LineBox = styled.div`
-  flex: 1;
   width: 6px;
   height: 179px;
   margin-right: 10px;
