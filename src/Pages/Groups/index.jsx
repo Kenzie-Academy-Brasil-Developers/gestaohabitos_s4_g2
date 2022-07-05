@@ -1,8 +1,11 @@
 import CreateGroup from "../../Components/CardCreateGroup";
+import GroupImage from "../../svg/group_image.svg";
 import {
   Carrossel,
+  Container,
   ContainerInput,
   ContainerList,
+  ContentInfoCreateGroup,
   DivButtons,
   ListGroups,
   MobileList,
@@ -69,92 +72,104 @@ const Group = () => {
 
   return (
     <>
-      <CreateGroup />
-      <ContainerList>
-        <h1>Grupos</h1>
-        <button onClick={() => cleanFilter()}>Limpar Pesquisa</button>
-        <ContainerInput>
-          <input
-            onChange={(e) => setSearch(e.target.value)}
-            type={"text"}
-            placeholder={"Pesquise um Grupo"}
-            value={search}
-          />
-          <Button onClick={() => searchGroups(search)}>
-            <AiOutlineSearch size={25} />
-          </Button>
-        </ContainerInput>
-        <h3>Conheça os grupos relacionados a pessoas com tdah :</h3>
+      <Container>
+        <h1>Comunidade</h1>
+        <ContentInfoCreateGroup>
+          <div>
+            <h4>
+              Crie seu próprio grupo, amplie sua rede com pessoas que desejam
+              alcançar as mesmas metas que as suas.
+            </h4>
+            <img src={GroupImage} alt="imagem de pessoas" />
+          </div>
+          <CreateGroup />
+        </ContentInfoCreateGroup>
+        <ContainerList>
+          <h1>Grupos</h1>
+          <button onClick={() => cleanFilter()}>Limpar Pesquisa</button>
+          <ContainerInput>
+            <input
+              onChange={(e) => setSearch(e.target.value)}
+              type={"text"}
+              placeholder={"Pesquise um Grupo"}
+              value={search}
+            />
+            <Button onClick={() => searchGroups(search)}>
+              <AiOutlineSearch size={25} />
+            </Button>
+          </ContainerInput>
+          <h3>Explore por grupos :</h3>
 
-        <ListGroups>
-          <AiOutlineArrowLeft
-            className="icon"
-            cursor="pointer"
-            onClick={slideLeft}
-            size={90}
-          />
-          <Carrossel ref={carrossel}>
-            {filteredGroups !== ""
-              ? filteredGroups.map((group) => {
-                  return (
-                    <div>
-                      <CardGroup key={group.id} groups={group} />
-                    </div>
-                  );
-                })
-              : groups
-              ? groups.map((group) => {
-                  return (
-                    <div>
-                      <CardGroup key={group.id} groups={group} />
-                    </div>
-                  );
-                })
-              : null}
-          </Carrossel>
-          <AiOutlineArrowRight
-            className="icon"
-            cursor="pointer"
-            onClick={slideRight}
-            size={90}
-          />
-          <MobileList>
-            {filteredGroups !== ""
-              ? filteredGroups.map((group) => {
-                  return (
-                    <div>
-                      <CardGroup key={group.id} groups={group} />
-                    </div>
-                  );
-                })
-              : groups
-              ? groups.map((group) => {
-                  return (
-                    <div>
-                      <CardGroup key={group.id} groups={group} />
-                    </div>
-                  );
-                })
-              : null}
-          </MobileList>
-        </ListGroups>
-        <DivButtons>
-          <Button
-            onClick={() =>
-              setAtualPage(atualPage > 1 ? atualPage - 1 : atualPage)
-            }
-          >
-            Previos Page
-          </Button>
-          <Button
-            onClick={() => {
-              setAtualPage(atualPage + 1);
-            }}
-          >
-            Next Page
-          </Button>
-        </DivButtons>
-      </ContainerList>
+          <ListGroups>
+            <AiOutlineArrowLeft
+              className="icon"
+              cursor="pointer"
+              onClick={slideLeft}
+              size={90}
+            />
+            <Carrossel ref={carrossel}>
+              {filteredGroups !== ""
+                ? filteredGroups.map((group) => {
+                    return (
+                      <div>
+                        <CardGroup key={group.id} groups={group} />
+                      </div>
+                    );
+                  })
+                : groups
+                ? groups.map((group) => {
+                    return (
+                      <div>
+                        <CardGroup key={group.id} groups={group} />
+                      </div>
+                    );
+                  })
+                : null}
+            </Carrossel>
+            <AiOutlineArrowRight
+              className="icon"
+              cursor="pointer"
+              onClick={slideRight}
+              size={90}
+            />
+            <MobileList>
+              {filteredGroups !== ""
+                ? filteredGroups.map((group) => {
+                    return (
+                      <div>
+                        <CardGroup key={group.id} groups={group} />
+                      </div>
+                    );
+                  })
+                : groups
+                ? groups.map((group) => {
+                    return (
+                      <div>
+                        <CardGroup key={group.id} groups={group} />
+                      </div>
+                    );
+                  })
+                : null}
+            </MobileList>
+          </ListGroups>
+          <DivButtons>
+            <Button
+              onClick={() =>
+                setAtualPage(atualPage > 1 ? atualPage - 1 : atualPage)
+              }
+            >
+              Previos Page
+            </Button>
+            <Button
+              onClick={() => {
+                setAtualPage(atualPage + 1);
+              }}
+            >
+              Next Page
+            </Button>
+          </DivButtons>
+        </ContainerList>
+      </Container>
     </>
   );
 };
