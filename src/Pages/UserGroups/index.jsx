@@ -28,7 +28,6 @@ const UserGroups = () => {
       });
   }, []);
 
-  console.log(myGroups);
   return (
     <ContainerPage>
       <InfoPage>
