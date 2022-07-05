@@ -1,6 +1,51 @@
 import styled from "styled-components";
 
+export const Container = styled.section`
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-text-light);
+  }
+  img {
+    display: block;
+    width: 100%;
+    margin: 15px auto 30px;
+    max-width: 327px;
+  }
+`;
+export const ContentInfoCreateGroup = styled.div`
+  h4 {
+    width: 80%;
+    margin: 5px auto;
+    max-width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--color-text-light);
+  }
+  @media (min-width: 839px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  div {
+    flex: 1;
+  }
+`;
 export const ContainerList = styled.div`
+  margin: 20px 0;
+
+  h3 {
+    margin-bottom: 10px;
+    color: var(--color-text-light);
+  }
+
   @media (max-width: 814px) {
     max-width: 320px;
     width: 320px;
@@ -13,6 +58,7 @@ export const ContainerList = styled.div`
 `;
 
 export const ContainerInput = styled.div`
+  margin: 10px 0 15px;
   @media (max-width: 814px) {
     max-width: 320px;
     width: 320px;
