@@ -14,8 +14,6 @@ export const NavegationCustumizer = styled.nav`
     right: 0%;
 
 
-
-
     ul{
         margin-top: 62px;
         display: flex;
