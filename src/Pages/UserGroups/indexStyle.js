@@ -18,18 +18,30 @@ export const InfoPage = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  //margin-top: 35px;
+  margin-bottom: 25px;
   padding-top: 15px;
+  color: var(--color-text-light);
 `;
 export const Info = styled.div`
-  @media (max-width: 560px) {
-    padding: 20px;
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
   }
-
   p {
-    margin-top: 25px;
-    width: 350px;
-    margin-left: 25px;
+    font-size: 0.9rem;
+    width: 80%;
+    margin: 20px auto;
+  }
+  @media (min-width: 600px) {
+    padding: 20px;
+    h1 {
+      font-size: 1.6rem;
+      text-align: left;
+    }
+    p {
+      font-size: 1.2rem;
+      width: 100%;
+    }
   }
 `;
 
@@ -45,14 +57,14 @@ export const DivFigure = styled.div`
 `;
 
 export const ContainerGroups = styled.div`
+  color: var(--color-text-light);
   @media (max-width: 560px) {
     background-color: var(--color-second-light);
-    padding: 15px;
-    h2 {
-      margin-left: 25px;
-      margin-bottom: 10px;
-    }
   }
+  h2 {
+    margin: 8px auto;
+  }
+  padding: 15px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,16 +74,15 @@ export const ContainerGroups = styled.div`
 `;
 
 export const ListGroups = styled.div`
-  @media (max-width: 560px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+
+  @media (min-width: 560px) {
+    flex-direction: row;
     height: 300px;
     width: 100%;
-    overflow-x: auto;
   }
-  margin-top: 0px;
-  padding-bottom: 0px;
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  max-width: 1200px;
-  overflow-y: auto;
 `;
