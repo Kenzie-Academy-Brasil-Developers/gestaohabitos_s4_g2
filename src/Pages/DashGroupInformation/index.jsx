@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
 import Button from "../../Components/Button";
+import HandleActivities from "../../Components/HandleActivities";
 import HandleGoal from "../../Components/HandleGoal";
 import Input from "../../Components/Input";
+import ListActivities from "../../Components/ListActivities";
 import ListGoals from "../../Components/ListGoals";
 
 import ModalCustomizer from "../../Components/Modal";
@@ -9,11 +11,18 @@ import { useModal } from "../../Providers/ControlModal";
 
 import { useGroup } from "../../Providers/Grupos";
 import { useGoals } from "../../Providers/Metas";
+import { useActivities } from "../../Providers/Atividades";
 
 const GroupInformation = () => {
   const { member, targetGroup, getInOnGroup, getOutOnGroup } = useGroup();
   const { createGoalToGroup } = useGoals();
-  const { modalGoalsAdd, controlModalGoalsAdd } = useModal();
+  const { createActivitiesToGroup } = useActivities();
+  const {
+    modalGoalsAdd,
+    controlModalGoalsAdd,
+    modalActivitiesAdd,
+    controlModalActivitiessAdd,
+  } = useModal();
 
   const { register, handleSubmit } = useForm();
   return (
@@ -42,7 +51,33 @@ const GroupInformation = () => {
           <Button type="submit">Adicionar Meta</Button>
         </form>
       </ModalCustomizer>
+
+      <ModalCustomizer
+        isOpen={modalActivitiesAdd}
+        title="Adicionar uma atividade"
+        fn={controlModalActivitiessAdd}
+      >
+        <form
+          onSubmit={handleSubmit((callback) =>
+            createActivitiesToGroup(callback, targetGroup.id)
+          )}
+        >
+          <Input
+            register={register}
+            name="title"
+            placeholder="nome da atividade"
+            type="text"
+          />
+          <Input
+            register={register}
+            name="realization_time"
+            type="datetime-local"
+          />
+          <Button type="submit">Adicionar Atividade</Button>
+        </form>
+      </ModalCustomizer>
       <HandleGoal />
+      <HandleActivities />
       <section>
         <h1>{targetGroup.name}</h1>
         <div>
@@ -58,6 +93,7 @@ const GroupInformation = () => {
         </div>
       </section>
       <ListGoals />
+      <ListActivities />
     </>
   );
 };
