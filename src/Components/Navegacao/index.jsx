@@ -26,10 +26,13 @@ const Navegation = ({ isOpen }) => {
               <Link to="/explorerGroups">Explorar</Link>
             </li>
             <li>
+              <Link to="/userGroups">Meus Grupos</Link>
+            </li>
+            <li>
               <Link to="/updateUser">Perfil</Link>
             </li>
             <li onClick={logout}>
-              <a>Sair</a>
+              <a>Sair </a>
             </li>
           </>
         ) : (
