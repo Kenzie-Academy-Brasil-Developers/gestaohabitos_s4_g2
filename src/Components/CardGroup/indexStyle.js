@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.section`
   width: 70%;
   max-width: 308px;
-  margin: 10px auto;
+  margin: 10px;
   padding: 25px;
   margin: 5px;
   display: flex;
@@ -14,19 +14,25 @@ export const Container = styled.section`
 `;
 
 export const LineBox = styled.div`
-  width: 9px;
+  width: 6px;
   height: 179px;
   margin-right: 10px;
+  border-radius: 10px;
   background-color: var(--color-tag-level-easy);
 `;
 
 export const CardContent = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   color: var(--color-text-light);
 
   h3 {
+    max-width: 15ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     margin-bottom: 20px;
     font-size: 1.1rem;
   }
@@ -35,6 +41,10 @@ export const CardContent = styled.div`
     font-size: 0.95rem;
   }
   p {
+    max-width: 15ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 0.85rem;
     font-weight: lighter;
     margin-bottom: 10px;
