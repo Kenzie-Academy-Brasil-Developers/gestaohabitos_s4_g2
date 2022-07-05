@@ -32,7 +32,7 @@ const Navegation = ({ isOpen }) => {
               <Link to="/updateUser">Perfil</Link>
             </li>
             <li onClick={logout}>
-              <a>Sair</a>
+              <a>Sair </a>
             </li>
           </>
         ) : (
