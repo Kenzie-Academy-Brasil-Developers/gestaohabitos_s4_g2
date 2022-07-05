@@ -10,6 +10,7 @@ import Login from "../Pages/Login";
 import RegisterUser from "../Pages/RegisterUser";
 import Profile from "../Pages/Perfil";
 import Blog from "../Pages/BlogPage";
+import UserGroups from "../Pages/UserGroups";
 
 const Routes = () => {
   return (
@@ -25,6 +26,8 @@ const Routes = () => {
       <Route isPrivate path="/updateUser" component={Profile} />
 
       <Route isPrivate exact path="/dashboard" component={Dashboard} />
+
+      <Route isPrivate exact path="/userGroups" component={UserGroups} />
 
       <Route
         isPrivate
