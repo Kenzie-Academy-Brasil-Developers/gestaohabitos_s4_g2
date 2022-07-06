@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
 export const ContainerPage = styled.div`
-  @media (max-width: 560px) {
+  @media (max-width: 607px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    min-width: 320px;
   }
 `;
 
 export const InfoPage = styled.div`
-  @media (max-width: 560px) {
+  @media (max-width: 606px) {
     margin-top: 20px;
   }
 
@@ -32,7 +34,7 @@ export const Info = styled.div`
     width: 80%;
     margin: 20px auto;
   }
-  @media (min-width: 600px) {
+  @media (min-width: 606px) {
     padding: 20px;
     h1 {
       font-size: 1.6rem;
@@ -46,7 +48,7 @@ export const Info = styled.div`
 `;
 
 export const DivFigure = styled.div`
-  @media (max-width: 560px) {
+  @media (max-width: 606px) {
     display: none;
   }
 
@@ -57,20 +59,19 @@ export const DivFigure = styled.div`
 `;
 
 export const ContainerGroups = styled.div`
-  color: var(--color-text-light);
-  @media (max-width: 560px) {
-    background-color: var(--color-second-light);
+  @media (max-width: 608px) {
   }
   h2 {
     margin: 8px auto;
   }
+  color: var(--color-text-light);
   padding: 15px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  background-color: #d2d2d2;
+  // max-width: 1200px;
+  width: 100%;
 `;
 
 export const ListGroups = styled.div`
@@ -79,10 +80,48 @@ export const ListGroups = styled.div`
   justify-content: center;
   align-items: center;
   overflow-x: auto;
+  height: 400px;
 
-  @media (min-width: 560px) {
+  padding-top: 50px;
+
+  @media (min-width: 607px) {
+    //flex-direction: row;
+    //height: 260px;
+    ////width: 100%;
+    ////background-color: red;
+    ////max-width: 1500px;
+    ////min-width: 600px;
+    //margin-top: 0px;
+    //width: 3800px;
+    //padding-top: 0px;
+
+    max-height: 300px;
+    display: flex;
+    justify-content: flex-start;
     flex-direction: row;
-    height: 300px;
-    width: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    max-width: 69vw;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+`;
+
+export const ContainerList = styled.div`
+  @media (max-width: 606px) {
+    display: none;
+  }
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+`;
+
+export const ContainerListMobile = styled.div`
+  @media (min-width: 607px) {
+    display: none;
   }
 `;
