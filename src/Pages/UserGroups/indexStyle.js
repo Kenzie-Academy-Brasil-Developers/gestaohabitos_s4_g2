@@ -81,6 +81,7 @@ export const ListGroups = styled.div`
   align-items: center;
   overflow-x: auto;
   height: 400px;
+
   padding-top: 50px;
 
   @media (min-width: 607px) {
