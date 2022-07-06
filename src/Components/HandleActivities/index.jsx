@@ -27,7 +27,7 @@ const HandleActivities = () => {
           type="text"
         />
 
-        <Button type="submit">Adicionar Atividade</Button>
+        <Button type="submit">Atualizar</Button>
       </form>
     </ModalCustomizer>
   );

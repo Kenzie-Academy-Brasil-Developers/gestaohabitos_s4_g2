@@ -23,11 +23,13 @@ export const ActivitiesProvider = ({ children }) => {
   };
 
   const updatedActivitiesToGroup = (data, id) => {
-    api.patch(`/activities/${id}/`, data, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    api
+      .patch(`/activities/${id}/`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((_) => loadActivities());
   };
   const createActivitiesToGroup = (data, id) => {
     api

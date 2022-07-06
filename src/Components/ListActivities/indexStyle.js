@@ -20,7 +20,7 @@ export const List = styled.div`
     overflow-x: auto;
     section {
       min-width: 300px;
-      margin: 0 10px 20px 0;
+      margin: 0 8px 20px 0;
     }
     ::-webkit-scrollbar {
       width: 18px;
@@ -36,7 +36,7 @@ export const List = styled.div`
   }
 `;
 
-export const LengthGoals = styled.div`
+export const LengthAtivities = styled.div`
   margin-top: 32px;
   width: 250px;
   span {
