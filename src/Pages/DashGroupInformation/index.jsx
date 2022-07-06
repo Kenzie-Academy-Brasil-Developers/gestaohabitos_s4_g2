@@ -22,7 +22,7 @@ const GroupInformation = () => {
     modalGoalsAdd,
     controlModalGoalsAdd,
     modalActivitiesAdd,
-    controlModalActivitiessAdd,
+    controlModalActivitiesAdd,
   } = useModal();
 
   const { register, handleSubmit } = useForm();
@@ -48,8 +48,7 @@ const GroupInformation = () => {
           </Button>
         </div>
       </ContainerInfor>
-      <ContainerLists>
-      </ContainerLists>
+      <ContainerLists></ContainerLists>
 
       <ModalCustomizer
         isOpen={modalGoalsAdd}
@@ -79,7 +78,7 @@ const GroupInformation = () => {
       <ModalCustomizer
         isOpen={modalActivitiesAdd}
         title="Adicionar uma atividade"
-        fn={controlModalActivitiessAdd}
+        fn={controlModalActivitiesAdd}
       >
         <form
           onSubmit={handleSubmit((callback) =>
@@ -102,8 +101,10 @@ const GroupInformation = () => {
       </ModalCustomizer>
       <HandleGoal />
       <HandleActivities />
-      <ListGoals />
-      <ListActivities />
+      <ContainerLists>
+        <ListGoals />
+        <ListActivities />
+      </ContainerLists>
     </>
   );
 };
