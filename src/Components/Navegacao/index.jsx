@@ -34,7 +34,9 @@ const Navegation = ({ isOpen }) => {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>Quem Somos</li>
+            <li>
+              <a href="#AboutUs">Quem Somos</a>
+            </li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
