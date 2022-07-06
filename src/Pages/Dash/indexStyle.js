@@ -24,21 +24,20 @@ export const InformationsHabits = styled.div`
   margin-top: 32px;
   width: 300px;
   padding: 32px;
-  
-  h1{
+
+  h1 {
     font-size: 1.5rem;
     margin-bottom: 12px;
   }
-  p{
+  p {
     font-weight: 200;
     font-size: 0.85rem;
     line-height: 1.2rem;
   }
 
-  img{
+  img {
     margin-top: 22px;
   }
-
 `;
 
 export const ContainerFomr = styled.div`
@@ -47,17 +46,18 @@ export const ContainerFomr = styled.div`
     display: none;
   }
 
-  form{
+  form {
     height: 100%;
     width: 400px;
     background-color: var(--color-primary-light);
+    box-shadow: 2px 2px 15px black;
     padding: 32px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    select{
+    select {
       width: 100%;
     }
   }

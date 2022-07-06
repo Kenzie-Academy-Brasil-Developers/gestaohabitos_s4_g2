@@ -40,4 +40,9 @@ export const InputContainer = styled.div`
   svg {
     margin-right: 10px;
   }
+
+  input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
 `;
