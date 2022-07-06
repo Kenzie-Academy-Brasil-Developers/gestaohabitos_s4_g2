@@ -46,6 +46,11 @@ export const ContainerList = styled.div`
     color: var(--color-text-light);
   }
 
+  button{
+    font-weight: 600;
+    font-size: 16.75px;
+  }
+
   @media (max-width: 814px) {
     max-width: 320px;
     width: 320px;
@@ -96,7 +101,7 @@ export const ListGroups = styled.div`
   //  display: flex;
   //  flex-direction: row;
   //  overflow-y: hidden;
-  background-color: var(--color-text-light);
+  background-color: #D2D2D2;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -119,6 +124,9 @@ export const Carrossel = styled.div`
   ::-webkit-scrollbar {
     display: none;
   }
+  div{
+    margin-right:10px;
+  }
 `;
 
 export const MobileList = styled.div`
@@ -134,4 +142,9 @@ export const MobileList = styled.div`
   overflow-x: auto;
 `;
 
-export const DivButtons = styled.div``;
+export const DivButtons = styled.div`
+       width: 350px;
+       display: flex;
+       align-items: center;
+       justify-content: space-around;
+`;
