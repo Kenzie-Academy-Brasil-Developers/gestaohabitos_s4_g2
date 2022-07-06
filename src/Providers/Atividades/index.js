@@ -12,14 +12,16 @@ export const ActivitiesProvider = ({ children }) => {
   const { token } = useContext(LoginContext);
 
   const loadActivities = () => {
-    api
-      .get(`/activities/?group=${targetGroup.id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((resp) => setActivities(resp.data.results))
-      .catch((err) => console.log(err));
+    if (!!token) {
+      api
+        .get(`/activities/?group=${targetGroup.id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((resp) => setActivities(resp.data.results))
+        .catch((err) => console.log(err));
+    }
   };
 
   const updatedActivitiesToGroup = (data, id) => {

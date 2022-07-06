@@ -1,14 +1,20 @@
-import CardBlog from "../../Components/CardBlog";
-import CreateGroup from "../../Components/CardCreateGroup";
+import HomeTitle from "../../Components/HomeTitle";
+import HomeInfor from "../../Components/HomeInfor";
+import HomeGroups from "../../Components/HomeGroups";
+import CardHabitsHome from "../../Components/CardHabitsHome";
+import CardAboutUs from "../../Components/CardAboutUs";
+import ListCardAboutUs from "../../Components/ListCardAboutUs";
 
 const Home = () => {
   return (
-    <>
-  <div>Home</div>
-  
-  </>
-  
-  )
+    <div>
+      <HomeTitle />
+      <HomeInfor />
+      <CardHabitsHome />
+      <HomeGroups />
+      <ListCardAboutUs />
+    </div>
+  );
 };
 
 export default Home;
