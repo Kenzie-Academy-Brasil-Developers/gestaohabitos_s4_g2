@@ -12,14 +12,16 @@ export const GoalsProvider = ({ children }) => {
   const { token } = useContext(LoginContext);
 
   const loadGoals = () => {
-    api
-      .get(`/goals/?group=${targetGroup.id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => setGoals(response.data.results))
-      .catch((err) => console.log(err));
+    if (!!token) {
+      api
+        .get(`/goals/?group=${targetGroup.id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => setGoals(response.data.results))
+        .catch((err) => console.log(err));
+    }
   };
 
   const createGoalToGroup = (data, id) => {
