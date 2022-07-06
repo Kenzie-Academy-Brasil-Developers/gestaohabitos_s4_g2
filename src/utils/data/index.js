@@ -1,5 +1,5 @@
 import AllanProfile from "../../image/allan.jpg"
-
+import JulioProfile from '../../image/julio.jpeg'
 const devs = [
     {
         id: 1,
@@ -11,6 +11,18 @@ const devs = [
             linkedin: "https://www.linkedin.com/in/allan-alves-19b64a1b5/",
             github: "https://github.com/allanalvescs",
             instagram: "https://www.instagram.com/allan.17alves/",
+        }
+    },
+    {
+        id:2, 
+        name: "Julio Barbosa",
+        description: "Meu nome é Julio, tenho 25 anos, gosto da parte de desenvolvimento WEB, pretendo me especializar em desenvolvimento front-end",
+        office: "QA",
+        profile: JulioProfile,
+        social: {
+            linkedin: "https://www.linkedin.com/in/julio-cesar-barbosa-da-silva-b335b6100/",
+            github: "https://github.com/JulioBarbosa19",
+
         }
     }
 ]
