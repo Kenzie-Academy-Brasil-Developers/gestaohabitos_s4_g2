@@ -22,6 +22,7 @@ const devs = [
         social: {
             linkedin: "https://www.linkedin.com/in/julio-cesar-barbosa-da-silva-b335b6100/",
             github: "https://github.com/JulioBarbosa19",
+            instagram: "https://www.instagram.com/julio.barbosa.52/",
 
         }
     }
