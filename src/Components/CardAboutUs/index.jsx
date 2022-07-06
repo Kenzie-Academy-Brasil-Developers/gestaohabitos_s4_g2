@@ -32,17 +32,17 @@ const CardAboutUs = ({ name, office, description, social, profile }) => {
       </Card>
       <ContainerCircles>
         <CircleBlue>
-          <a href={social.linkedin}>
+          <a href={social.linkedin} target="_blank">
             <FaLinkedinIn size="20" color="var(--color-primary-light)" />
           </a>
         </CircleBlue>
         <CirclePink>
-          <a href={social.instagram}>
+          <a href={social.instagram} target="_blank">
             <FaInstagram size="20" color="var(--color-primary-light)" />
           </a>
         </CirclePink>
         <CircleBlack>
-          <a href={social.github}>
+          <a href={social.github} target="_blank">
             <BsGithub size="20" color="var(--color-primary-light)" />
           </a>
         </CircleBlack>
