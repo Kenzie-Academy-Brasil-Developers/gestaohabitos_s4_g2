@@ -14,12 +14,6 @@ const Navegation = ({ isOpen }) => {
         {!!token ? (
           <>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
-            <li>
               <Link to="/dashboard">Habitos</Link>
             </li>
             <li>

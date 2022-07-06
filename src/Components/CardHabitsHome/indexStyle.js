@@ -3,14 +3,23 @@ import styled from "styled-components";
 export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
+    margin-top: 62px;
+    margin-bottom: 32px;
 
 
     h2{
-    width: 65%;
+    width: 340px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 42px;
-    margin: 10px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 16px auto;
+    text-align: center;
+
+    @media screen and (min-width: 768px){
+         width: 758px;
+         text-align: start;
+         font-size: 1.5rem;
+    }
    }
 `
 
@@ -41,26 +50,30 @@ export const Circle = styled.div`
 `;
 
 export const SubContainer = styled.div`
-@media (max-width:800px){
- margin-top: 10px;
- margin-bottom: 10px;
-  width: 80%;
-   display: flex;
-   flex-direction: column;
-
-   p{
-    margin-top: 2px;
-    margin-left: 12px;
-
-   }
-  }
-  width: 70%;
-  margin: 30px;
+     width: 300px;
+     margin: 30px;
+     padding: 12px;
+     border-radius: 12px;
+     box-shadow: 2px 2px 15px var(--bg-color-menu-mobile-light);
   p{
     margin-top: 2px;
     margin-left: 12px;
     
    }
+
+   @media (min-width:768px){
+          margin-top: 10px;
+          margin-bottom: 10px;
+          width: 500px;
+          display: flex;
+          flex-direction: column;
+
+          p {
+               margin-top: 2px;
+               margin-left: 12px;
+
+          }
+     } 
   
   
 `;
