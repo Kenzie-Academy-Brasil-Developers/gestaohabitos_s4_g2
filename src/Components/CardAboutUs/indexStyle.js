@@ -1,36 +1,7 @@
-
 import styled from "styled-components";
-export const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
- 
-  h1{
-    text-align: center;
-  }
-`;
-export const Box = styled.div`
-  @media (max-width:740px){
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
 
-  }
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-`;
 
 export const CardSecundary = styled.div`
-   @media (max-width:740px) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    
-   }
-
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -49,7 +20,7 @@ export const CardThird = styled.div`
 
 export const Container = styled.div`
  margin-top: 25px;
- width: 100%;
+ width: 340px;
  display: flex;
  flex-direction: column;
  justify-content: center;
@@ -76,8 +47,8 @@ export const Container = styled.div`
 
 export const Picture = styled.img`
   background-color: green;
-  width: 90px;
-  height: 90px;
+  width: 50px;
+  height: 50px;
   background-size: cover;
   display: block;
   border-radius: 50%;
@@ -92,31 +63,40 @@ export const Card = styled.div`
 
 export const CircleBlue = styled.div`
   background-color: #1361F9;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: block;
   border-radius: 50%;
   margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 
 export const CircleBlack = styled.div`
   background-color: #24292F;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: block;
   border-radius: 50%;
   margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 
 export const CirclePink = styled.div`
   background-color: #E54B73;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: block;
   border-radius: 50%;
   margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ContainerCircles = styled.div`
