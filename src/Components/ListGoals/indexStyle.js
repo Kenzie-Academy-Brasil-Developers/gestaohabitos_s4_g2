@@ -16,6 +16,7 @@ export const List = styled.div`
 
   @media (min-width: 600px) {
     width: 70%;
+    height: 300px;
     flex-direction: row;
     overflow-x: auto;
     section {

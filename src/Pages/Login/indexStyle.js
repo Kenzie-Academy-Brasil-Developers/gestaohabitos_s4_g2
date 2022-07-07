@@ -15,8 +15,8 @@ export const ContainerLogin = styled.div`
     align-items: center;
   }
 
+  margin-top: 15px;
   height: 80vh;
-
   display: flex;
   align-items: stretch;
 `;

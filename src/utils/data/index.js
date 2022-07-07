@@ -1,6 +1,8 @@
 import AllanProfile from "../../image/allan.jpg";
 import JulioProfile from "../../image/julio.jpeg";
+
 import OlgaProfile from "../../image/olga.jpg";
+import InacioProfile from "../../image/inacio.jpeg";
 const devs = [
   {
     id: 1,
@@ -30,7 +32,21 @@ const devs = [
     },
   },
   {
-    id: 4,
+    id: 3,
+    name: "Cláudio Inácio",
+    description:
+      "Meu nome é Cláudio Inácio, tenho 27 anos, me apaixonei pelo desenvolvimento front-end desde que comecei a estudar em 2021, após finalizar o curso de front-end vou começar o novo desafio de me especializar em Desenvolvimento Mobile. Acesse minhas redes sociais abaixo!!",
+    office: "Scrum Master",
+    profile: InacioProfile,
+    social: {
+      linkedin:
+        "https://www.linkedin.com/in/claudio-in%C3%A1cio-felipe-junior/",
+      github: "https://github.com/claudio-inacio",
+      instagram: "https://www.instagram.com/c.inaciio/",
+      }
+    },
+    {
+     id: 4,
     name: "Olga Luisa",
     description:
       "Meu nome é Olga Luisa, tenho 25 anos e sou apaixonada por tecnologia, desde nova sempre soube que era esse o caminho que eu queria seguir. Amo trabalhar na parte visual do projeto,gosto de aprender coisas novas mesmo que sejam desafiadoras e estou sempre aberta para novos aprendizados.",
@@ -40,7 +56,8 @@ const devs = [
       linkedin: "https://www.linkedin.com/in/olga-luisa-a63409196/",
       github: "https://github.com/Olgaluiisa",
       instagram: "https://instagram.com/olgaluiisa?igshid=YmMyMTA2M2Y=",
-    },
+      }
+    }
   },
 ];
 
