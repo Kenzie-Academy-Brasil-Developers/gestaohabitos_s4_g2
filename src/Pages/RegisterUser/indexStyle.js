@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100vh;
   display: flex;
-  align-items: stretch;
+  /* align-items: center; */
 
   @media (min-width: 1100px) {
     background-color: var(--color-primary-light);
+    margin-top: 18px;
+    height: calc(100vh - 100px);
   }
 `;
 
@@ -15,7 +16,7 @@ export const RegistrationContent = styled.section`
   color: var(--color-text-light);
   h2 {
     width: 180px;
-    margin: 0 auto;
+    margin: 60px auto 0;
     font-size: 1.6rem;
     text-align: center;
     margin-bottom: 25px;
@@ -41,7 +42,7 @@ export const RegistrationContent = styled.section`
 
 export const ContainerForm = styled.div`
   width: 225px;
-  margin: 0 auto;
+  margin: 20px auto 0;
   padding: 25px 30px;
   background-color: var(--color-primary-light);
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.25);
@@ -154,7 +155,7 @@ export const ContentImage = styled.figure`
     img {
       display: block;
       width: 65%;
-      margin: 40px auto;
+      margin: 60px auto;
     }
   }
 `;

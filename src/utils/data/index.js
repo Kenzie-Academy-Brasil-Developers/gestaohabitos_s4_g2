@@ -1,5 +1,7 @@
 import AllanProfile from "../../image/allan.jpg";
 import JulioProfile from "../../image/julio.jpeg";
+
+import OlgaProfile from "../../image/olga.jpg";
 import InacioProfile from "../../image/inacio.jpeg";
 const devs = [
   {
@@ -41,7 +43,21 @@ const devs = [
         "https://www.linkedin.com/in/claudio-in%C3%A1cio-felipe-junior/",
       github: "https://github.com/claudio-inacio",
       instagram: "https://www.instagram.com/c.inaciio/",
+      }
     },
+    {
+     id: 4,
+    name: "Olga Luisa",
+    description:
+      "Meu nome é Olga Luisa, tenho 25 anos e sou apaixonada por tecnologia, desde nova sempre soube que era esse o caminho que eu queria seguir. Amo trabalhar na parte visual do projeto,gosto de aprender coisas novas mesmo que sejam desafiadoras e estou sempre aberta para novos aprendizados.",
+    office: "PO",
+    profile: OlgaProfile,
+    social: {
+      linkedin: "https://www.linkedin.com/in/olga-luisa-a63409196/",
+      github: "https://github.com/Olgaluiisa",
+      instagram: "https://instagram.com/olgaluiisa?igshid=YmMyMTA2M2Y=",
+      }
+    }
   },
 ];
 
