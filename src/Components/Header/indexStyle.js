@@ -6,7 +6,7 @@ export const HeaderCustomizer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 5px 12px;
-  box-shadow: 4px 4px 15px var(--bg-color-menu-mobile-light);
+  box-shadow: 1px 1px 15px var(--bg-color-menu-mobile-light);
   z-index: 1;
 
   figure {

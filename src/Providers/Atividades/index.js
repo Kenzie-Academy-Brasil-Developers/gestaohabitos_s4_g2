@@ -65,7 +65,7 @@ export const ActivitiesProvider = ({ children }) => {
   };
   useEffect(() => {
     loadActivities();
-  }, []);
+  }, [targetGroup]);
 
   return (
     <ActivitiesContext.Provider

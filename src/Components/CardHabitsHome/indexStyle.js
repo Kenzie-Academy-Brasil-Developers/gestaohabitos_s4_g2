@@ -23,15 +23,15 @@ export const MainContainer = styled.div`
 `;
 
 export const Container = styled.div`
-  @media (max-width: 800px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  width: 800px;
-
   display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 1024px){
+    flex-direction: row;
+    width: 1000px;
+    margin: 12px auto;
+  }
 `;
 
 export const Square = styled.div`
@@ -49,7 +49,7 @@ export const Circle = styled.div`
 
 export const SubContainer = styled.div`
   width: 300px;
-  margin: 30px;
+  margin: 30px auto;
   padding: 12px;
   border-radius: 12px;
   box-shadow: 2px 2px 15px var(--bg-color-menu-mobile-light);
@@ -68,6 +68,11 @@ export const SubContainer = styled.div`
     p {
       margin-top: 2px;
       margin-left: 12px;
+    }
+
+    @media screen and (min-width: 1024px){
+      width: 300px;
+      margin: 0px 12px;
     }
   }
 `;
