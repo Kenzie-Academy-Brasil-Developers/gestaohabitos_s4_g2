@@ -58,7 +58,6 @@ const devs = [
       instagram: "https://instagram.com/olgaluiisa?igshid=YmMyMTA2M2Y=",
       }
     }
-  },
 ];
 
 export default devs;
