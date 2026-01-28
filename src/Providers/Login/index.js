@@ -8,33 +8,30 @@ export const LoginContext = createContext();
 
 export const LoginProvider = ({ children }) => {
   const history = useHistory();
-
-  const [userId, setUserId] = useState(
-    JSON.parse(localStorage.getItem("@Habitos:userId")) || ""
-  );
+  const [userId, setUserId] = useState("");
+  const [loadingLogin, setLoadingLogin] = useState(false);
 
   const [authenticated, setAuthenticated] = useState(false);
-  const [token, setToken] = useState(
-    localStorage.getItem("@Habitos:token") || ""
-  );
+  const [token, setToken] = useState("");
 
   const onSubmitFunction = (data) => {
+    setLoadingLogin(true);
     api
-      .post("/sessions/", data)
+      .post("/login", data)
       .then((response) => {
-        //console.log(response.data);
-        const { access } = response.data;
-        let decode = jwt_decode(access);
+        const { token } = response.data;
+        let decode = jwt_decode(token);
         setUserId(decode.user_id);
         localStorage.setItem("@Habitos:userId", decode.user_id);
-        setToken(access);
+        setToken(token);
         setAuthenticated(true);
-
-        localStorage.setItem("@Habitos:token", access);
-
+        setLoadingLogin(false);
         return history.push("/dashboard");
       })
-      .catch((err) => toast.error("Email ou senha Inválidos"));
+      .catch((err) => {
+        setLoadingLogin(false);
+        toast.error(err.response.data?.message || "Email ou senha Inválidos");
+      });
   };
 
   const logout = () => {
@@ -54,7 +51,14 @@ export const LoginProvider = ({ children }) => {
 
   return (
     <LoginContext.Provider
-      value={{ onSubmitFunction, authenticated, token, logout, userId }}
+      value={{
+        onSubmitFunction,
+        authenticated,
+        token,
+        logout,
+        userId,
+        loadingLogin,
+      }}
     >
       {children}
     </LoginContext.Provider>

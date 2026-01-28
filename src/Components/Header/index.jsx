@@ -19,7 +19,6 @@ const Header = () => {
       <figure>
         <img src={Logo} alt="logo gestão de habitos" />
       </figure>
-
       <div>
         {isOpen ? (
           <FiX

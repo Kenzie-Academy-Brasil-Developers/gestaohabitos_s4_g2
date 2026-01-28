@@ -1,86 +1,58 @@
 import styled from "styled-components";
 import imageLogin from "../../svg/image_login.svg";
-export const ContainerLogin = styled.div`
-  @media (max-width: 320px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 30px;
-    min-width: 320px;
-  }
 
-  @media (min-width: 321px) and (max-width: 1099px) {
-    justify-content: center;
-    align-items: center;
-  }
-
-  margin-top: 15px;
-  height: 80vh;
+export const Container = styled.div`
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  justify-content: start;
+  @media (min-width: 1099px) {
+    flex-direction: row;
+  }
+`;
+
+export const ContainerLogin = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 70px;
+  text-align: center;
+  min-width: 320px;
+  width: 100%;
+  height: calc(95vh - 60px);
+  
+  @media (min-width: 1099px) {
+    width: 50%;
+  }
 `;
 
 export const DivTitleMobile = styled.div`
-  @media (min-width: 321px) {
-    display: none;
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  p {
+    margin-top: 20px;
   }
 `;
 
 export const ContainerForm = styled.div`
-  @media (max-width: 321px) {
-    background-color: var(--color-primary-light);
-    height: 350px;
-    max-width: 270px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border-radius: 8px;
-
-    h1 {
-      margin-left: -200px;
-      margin-top: 0px;
-      font-size: 1rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    button {
-      margin-bottom: 25px;
-      margin-top: 5px;
-    }
-  }
-
-  @media (min-width: 321px) and (max-width: 1099px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-    height: 380px;
-    border-radius: 5px;
-    button {
-      margin-left: 50px;
-      margin-bottom: 25px;
-    }
-  }
-
-  background-color: var(--color-primary-light);
+  box-shadow: 1px 1px 4px var(--bg-color-menu-mobile-light);
+  min-height: 400px;
+  max-height: 400px;
+  border-radius: 5px;
+  max-width: 100%;
+  width: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vh;
-  max-width: 700px;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 
-  button {
-    margin-left: 30px;
-    margin-bottom: 25px;
-  }
+  align-items: center;
+  justify-content: space-around;
+
   span {
     color: #0064c0;
     text-decoration: none;
@@ -88,18 +60,15 @@ export const ContainerForm = styled.div`
 `;
 
 export const DivImage = styled.div`
-  @media (min-width: 1100px) {
+  width: 100%;
+  height: 100%;
+  @media (min-width: 1099px) {
     flex: 1;
     background: url(${imageLogin}) no-repeat center;
     background-size: contain;
-  }
-`;
-
-export const DivInput = styled.div`
-  width: 250px;
-  @media (min-width: 321px) and (max-width: 1099px) {
-    width: 100%;
-    justify-content: center;
-    padding: 5px;
+    width: 300px;
+    height: 450px;
+    max-height: 100%;
+    max-width: 100%;
   }
 `;

@@ -1,13 +1,13 @@
+import { Spinner } from "../Input/spinner/indexStyle";
+import { ButtonComponent } from "./indexStyle";
 
-import {Container} from './indexStyle';
-
-const Button = ({children, ...rest}) => {
-
-    return(
-       <Container {...rest}>
-        {children}
-        </Container> 
-    )  
-}
+const Button = ({ children, disabled= false, isLoading  = false, ...rest }) => {
+  return (
+    <ButtonComponent {...rest} isLoading disabled={disabled || isLoading}>
+      {children}
+      {isLoading && <Spinner />}
+    </ButtonComponent>
+  );
+};
 
 export default Button;

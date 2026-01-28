@@ -23,7 +23,7 @@ const CardAboutUs = ({ name, office, description, social, profile }) => {
         />
         <CardThird>
           <h2>{name}</h2>
-          <h3>{office} / frontEnd</h3>
+          <h3>{office}</h3>
         </CardThird>
       </CardSecundary>
       <h3>Sobre mim:</h3>

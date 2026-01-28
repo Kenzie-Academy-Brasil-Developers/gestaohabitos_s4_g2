@@ -1,24 +1,32 @@
 import styled from "styled-components";
 
 export const NavegationCustumizer = styled.nav`
-  display: ${(props) => (props.open ? "flex" : "none")};
-  transform: ${(props) => (props.open ? "translateX(0%)" : "translateX(100%)")};
-  background-color: var(--bg-color-menu-mobile-light);
-  opacity: ${(props) => (props.open ? 1 : 0)};
-  transition: opacity 0.6s;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  right: 0;
+
   height: 100vh;
-  width: 124px;
-  padding: 0px 32px;
-  top: 0.5%;
-  right: 0%;
+  width: 240px;
+  padding: 0 32px;
+
+  background-color: var(--bg-color-menu-mobile-light);
+
+  transform: ${({ open }) =>
+    open ? "translateX(0)" : "translateX(100%)"};
+
+  opacity: ${({ open }) => (open ? 1 : 0)};
+  pointer-events: ${({ open }) => (open ? "auto" : "none")};
+
+  transition: transform 0.4s ease, opacity 0.3s ease;
+
+  z-index: 1000;
 
   ul {
-    margin-top: 62px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 25%;
+    gap: 20px;
+
     li a {
       color: var(--color-primary-light);
       text-decoration: none;
@@ -26,25 +34,24 @@ export const NavegationCustumizer = styled.nav`
   }
 
   @media screen and (min-width: 768px) {
-    display: block;
-    transform: translateX(0%);
+    position: static;
+    height: auto;
+    width: auto;
+    padding: 0;
+
+    transform: none;
     opacity: 1;
-    height: 70px;
-    width: 500px;
+    pointer-events: auto;
     background: transparent;
 
     ul {
-      height: 100%;
-      margin-top: 0px;
       flex-direction: row;
-      align-items: center;
-      li {
-        cursor: pointer;
-      }
+      margin-top: 0;
+      gap: 24px;
+
       li a {
         color: var(--color-text-light);
         font-weight: 600;
-        text-decoration: none;
       }
     }
   }

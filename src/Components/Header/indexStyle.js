@@ -2,34 +2,37 @@ import styled from "styled-components";
 
 export const HeaderCustomizer = styled.header`
   height: 60px;
+  width: 100%;
+  min-width: 370px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 12px;
+  
   box-shadow: 1px 1px 15px var(--bg-color-menu-mobile-light);
-  z-index: 1;
+
+  position: relative;
+  z-index: 1100; 
 
   figure {
     height: 100px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 15px;
+
     img {
-      height: 80px;
+      height: 60px;
     }
   }
 
   div {
-    height: 100px;
+    height: 30px;
     width: 60px;
     position: relative;
-    z-index: 1;
+    z-index: 1100;
+
     svg {
-      position: absolute;
-      top: 25%;
-      left: 50%;
-      z-index: 1;
+      cursor: pointer;
     }
 
     @media screen and (min-width: 768px) {
